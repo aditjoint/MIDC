@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investment Consulting | ADAM Consult</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- 🌍 Investment Consulting Card Section -->
+  <section class="investment-consulting">
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h1>Investment Consulting & Strategic Advisory</h1>
+          <p>Helping organizations scale sustainably through financial, strategic, and impact-driven investment readiness.</p>
+        </div>
+        <div class="card-body">
+          <h2>Segment Points of Engagement - PART "A"</h2>
+          <p>Advisory Support Part "A" Involves making it investor ready and remodelling the entire project to create visibility amongst Investors</p>
+          <ul class="engagement-list">
+            <li>Project Evaluation</li>
+            <li>Company Due Diligence</li>
+            <li>Business Model Evaluation</li>
+            <li>Financial Model Evaluation</li>
+            <li>Identifying SDGs of the Business Model</li>
+            <li>ESG Mapping to Business Models</li>
+            <li>Strategy of Business Design</li>
+          </ul>
+
+	  <h2>Segment Points of Engagement - PART "B"</h2>
+	  <p>Advisory Support Part "B" Companies who wish to grow to scale up their operations and need assistance and guidance in making them investor ready, we have Part B, besides Part A which works on each of the line items mentioned in Part B and culminates it to the penaltimate round of funding through Strategic or Financial Investors, Debt or Equity funding</p>
+          <ul class="engagement-list">
+            <li>Project Evaluation</li>
+            <li>Company Due Diligence</li>
+            <li>Business Model Evaluation</li>
+            <li>Financial Model Evaluation</li>
+            <li>Identifying SDGs of the Business Model</li>
+            <li>ESG Mapping to Business Models</li>
+            <li>Strategy of Business Design</li>
+            <li>Strategic Advisory</li>
+            <li>Transactional Advisory</li>
+            <li>Financial Advisory (including complete remodelling of financial documents)</li>
+            <li>Business Plan and its Alignment to the Business Model</li>
+            <li>Projected Capital & Working Capital Requirement</li>
+            <li>Projected Revenue & Cash Flows</li>
+            <li>Discounted Cash Flow (DCF) Model</li>
+            <li>SDG-Level Assessment of the Business Model</li>
+            <li>Stage-wise ESG Model Assessment</li>
+            <li>Draft to Final Pitch Deck</li>
+            <li>Investor Segmentation (Strategic to Financial)</li>
+            <li>Term Sheet Vetting & Negotiation</li>
+            <li>Investor Meeting & Discussion Support</li>
+            <li>Definitive Agreement Preparation</li>
+            <li>Share Subscription Agreement Preparation</li>
+            <li>Shareholder Agreement Drafting & Closure</li>
+            <li>Coordination for Conditions Precedent (CP) and Conditions Subsequent (CS)</li>
+          </ul>
+
+
+
+          <div class="advisory-section">
+            <h2>Part A: Retainer Fees</h2>
+            <p>Engagements under this segment operate on a monthly retainer fee model based on project scope and complexity, <strong>payable in INR </strong><strong>Equivalent to 5000-15000 USD</strong>.</p>
+
+            <h2>Part B: Advisory Engagement</h2>
+            <p>For companies seeking to become investor-ready and scale operations, our comprehensive advisory services (Part B) include all line items mentioned above, culminating in investor outreach and funding readiness through <strong>Strategic or Financial Investors (Debt or Equity)</strong>.</p>
+             <p>Engagements under this segment operate on a monthly retainer fee model based on project scope and complexity, <strong>payable in INR</strong> <strong>Equivalent to 15000-30000 USD</strong>.</p>
+
+            <h2>Part C: Success Fee</h2>
+            <p><strong>5–7%</strong> of the total funded value upon successful transaction closure.</p>
+            
+            <h2>Part D: Applicable Taxes</h2>
+            <p><strong>Govt. Fees and applicable Taxes</strong>will be Applicable extra on all invoice and payments</p>
+          </div>
+
+          <div class="impact-focus">
+            <h2>Impact Focus Areas</h2>
+            <p>We prioritize projects within the <strong>Impact Segment</strong>—specifically in <strong>Climate Change, Education, and Healthcare</strong>. Our portfolio companies receive integrated <strong>Strategic, Financial, and Transactional Advisory</strong> aligned with SDG and ESG frameworks.</p>
+            <p>Through this integrated approach, we assist organizations in securing the right form of capital — <strong>Debt or Equity</strong> — based on their sustainability and business alignment.</p>
+          </div>
+
+          <!-- WhatsApp CTA -->
+          <div class="cta">
+            <a href="https://wa.me/918779639965" target="_blank" class="cta-btn">
+              <i class="fab fa-whatsapp"></i> Chat with us for Booking an Advisor
+            </a>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <h3>Service Offerings by ADAM Consult's - Partner Global Ventures</h3>
+          <p>Our service charges are calculated as a <strong>percentage of the total funded value</strong> and structured to align with investor outcomes and business success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform your ERP for an enterprise grade platform?</h2>
+                <p>Contact us today to discuss how our solutions and Implementation Plans</p>
+                <a href="../contact.html" class="btn btn-primary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+  
+    
+  <!-- ✅ Footer Placeholder -->
+  <div id="footer-placeholder"></div>    
+ <!-- ✅ Load header and footer dynamically and then initialize scripts -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Load Header
+    fetch("/header.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header-placeholder").innerHTML = html;
+
+        // ✅ Wait for DOM injection, then bind mobile menu
+        const toggle = document.getElementById("menu-toggle");
+        const nav = document.getElementById("mobile-menu");
+
+        if (toggle && nav) {
+          toggle.addEventListener("click", function () {
+            nav.classList.toggle("active");
+          });
+        }
+
+        // ✅ Optional: re-run dropdown initialization if needed
+        if (typeof initDropdowns === "function") initDropdowns();
+      });
+
+    // Load Footer
+    fetch("/footer.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("footer-placeholder").innerHTML = html;
+
+        // ✅ Load protection script after footer
+        const protect = document.createElement("script");
+        protect.src = "/js/imgTextProtect.js";
+        document.body.appendChild(protect);
+      });
+
+    // ✅ Load core scripts after all above
+    const main = document.createElement("script");
+    main.src = "/js/main.js";
+    main.onload = () => {
+      if (typeof initTabs === "function") initTabs();
+      if (typeof initHeroAnimation === "function") initHeroAnimation();
+      // Add other initializers if needed
+    };
+    document.body.appendChild(main);
+
+    const dropdown = document.createElement("script");
+    dropdown.src = "/js/dropdown.js";
+    document.body.appendChild(dropdown);
+  });
+</script>
+<script src="path/to/background.js"></script>
+
+</body>
+</html>
+
+
+
+
+	
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Dynamic Header & Footer Loader -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("/header.html").then(r => r.text()).then(html => {
+        document.getElementById("header-placeholder").innerHTML = html;
+      });
+      fetch("/footer.html").then(r => r.text()).then(html => {
+        document.getElementById("footer-placeholder").innerHTML = html;
+      });
+    });
+  </script>
+
+  <!-- Inline Styles -->
+  <style>
+    body { font-family: 'Roboto', sans-serif; margin: 0; background: #fafafa; }
+    .investment-consulting { background: #fff; padding: 60px 20px; }
+    .investment-consulting .container { max-width: 1100px; margin: auto; }
+    .card { background: #fff; border-radius: 20px; box-shadow: 0 4px 25px rgba(0,0,0,0.1); padding: 40px; }
+    .card-header h1 { color: #1a237e; font-size: 32px; margin-bottom: 10px; }
+    .card-header p { color: #444; font-size: 18px; margin-bottom: 25px; }
+    .engagement-list { list-style: none; padding: 0; columns: 2; column-gap: 40px; }
+    .engagement-list li { padding-left: 25px; position: relative; margin-bottom: 8px; }
+    .engagement-list li::before { content: "✓"; position: absolute; left: 0; color: #2e7d32; font-weight: bold; }
+    .advisory-section h2 { color: #1565c0; margin-top: 35px; font-size: 20px; }
+    .impact-focus { margin-top: 40px; background: #f0f7f9; padding: 25px; border-left: 5px solid #00897b; border-radius: 10px; }
+    .cta { text-align: center; margin-top: 25px; }
+    .cta-btn { display: inline-block; background: #25d366; color: #fff; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: background 0.3s; }
+    .cta-btn:hover { background: #20b958; }
+    .card-footer { text-align: center; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 25px; }
+  </style>
+</body>
+</html>
+

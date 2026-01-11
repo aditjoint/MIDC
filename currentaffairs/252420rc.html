@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>ADAM Consult - Connect and Inspire</title>
+  <meta name="description" content="ERP package estimation for Finance, Inventory, Sales, CRM, HRMS, Manufacturing, BI, and more. Includes module-level pricing and solution-based costing for enterprise ERP solutions." />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+  <link rel="stylesheet" href="/css/ratecards.css" />
+  <link rel="stylesheet" href="/css/protect.css" /> <!-- 🔒 Protection CSS -->
+ 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- 🔒 Inline Protection Fallback -->
+  
+</head>
+<body>
+
+<!-- ✅ Header Placeholder -->
+<div id="header-placeholder">Invest</div>
+
+<main>
+
+  <!-- Small Cards Section -->
+  <section class="small-cards">
+    <div class="cards-container">
+
+   
+     <a href="https://drive.google.com/" 
+         target="_blank" class="small-card">
+        <h4>LAND Parcels in Navi Mumbai (Navi Mumbai, Taloja, Panvel, Nhavaseva) - Data Centers/ Warehouse/ Cold Storage Infrastructure - 5acres -300 Acres - All types of liasioning services</h4>
+      </a>
+      
+      
+      <a href="https://drive.google.com/file/d/1t06DafG2xHKMnutLeGsZPJVKnt6p2d-I/view?usp=sharing" 
+         target="_blank" class="small-card">
+        <h4>EOI – Empanelment of VLT Device Manufacturers (Tamil Nadu)</h4>
+      </a>
+
+      <a href="https://docs.google.com/document/d/your-prospectus-id" 
+         target="_blank" class="small-card">
+        <h4>Lead Repository – Version R2</h4>
+      </a>
+
+      <a href="https://docs.google.com/document/d/your-prospectus-id" 
+         target="_blank" class="small-card">
+        <h4>Lead Repository – Version R3</h4>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1HWokJXR0enrLHVMJ9GN4dUOhw03LJYPD/view?usp=sharing" 
+         target="_blank" class="small-card">
+        <h4>Investment Projection up to ₹100 Cr by Dec 2025</h4>
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- Investment Opportunity Table (hidden by default) -->
+  <div class="table-container investment-container" style="display: none;">
+    <table class="ratecard-table investment-table">
+      <thead>
+        <tr>
+          <th>S/N</th>
+          <th>Status</th>
+          <th>Sector / Theme / Project</th>
+          <th>Focus Area / Opportunity Description</th>
+          <th>Expected ROI / Growth</th>
+          <th>Entry Ticket<br>(Min. Investment)</th>
+          <th>Investment Horizon<br>(Years)</th>
+          <th>Validity<br>(Till Date)</th>
+          <th>Risk Profile<br>(High / Moderate / Low)</th>
+          <th>Remarks / Market Insights</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <!-- ✅ Template Rows -->
+        <tr>
+          <td>1</td>
+          <td><span style="color: orange; font-weight: bold;">Closed</span></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td><span style="color: green; font-weight: bold;">Open</span></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <tr>
+          <td>3</td>
+          <td><span style="color: green; font-weight: bold;">Open</span></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- Document Link Section -->
+  <section class="note">
+    <div class="ratecard-section">
+      <h2>Lead Blogs – Curated by the Advisors Panel</h2>
+      <ul>
+        <li><strong>Initiative by ADAM Consult:</strong> <span>To connect and inspire professionals through insights and shared knowledge.</span></li>
+        <li style="margin-top: 0.5rem; margin-bottom: 1rem;">
+          <a href="https://drive.google.com/drive/folders/1mXbmPLmLgmYRzxyoT4Sh412GhWmf1XNh?usp=sharing" target="_blank" style="text-decoration: none; color: #0056b3;">
+             📄 👉 Click to Explore
+          </a>
+        </li>
+        <li><strong>For more details:</strong>
+          <ul>
+            <li><strong>Contact:</strong> 
+              <a href="mailto:sales@adamconsult.com">sales@adamconsult.com</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- Call to Action Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Want to Discuss Opportunities <br>and Envisage Your Growth Trajectory?</h2>
+      <a href="../contact.html" class="btn btn-primary">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+  
+    
+  <!-- ✅ Footer Placeholder -->
+  <div id="footer-placeholder"></div>    
+ <!-- ✅ Load header and footer dynamically and then initialize scripts -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Load Header
+    fetch("/header.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header-placeholder").innerHTML = html;
+
+        // ✅ Wait for DOM injection, then bind mobile menu
+        const toggle = document.getElementById("menu-toggle");
+        const nav = document.getElementById("mobile-menu");
+
+        if (toggle && nav) {
+          toggle.addEventListener("click", function () {
+            nav.classList.toggle("active");
+          });
+        }
+
+        // ✅ Optional: re-run dropdown initialization if needed
+        if (typeof initDropdowns === "function") initDropdowns();
+      });
+
+    // Load Footer
+    fetch("/footer.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("footer-placeholder").innerHTML = html;
+
+        // ✅ Load protection script after footer
+        const protect = document.createElement("script");
+        protect.src = "/js/imgTextProtect.js";
+        document.body.appendChild(protect);
+      });
+
+    // ✅ Load core scripts after all above
+    const main = document.createElement("script");
+    main.src = "/js/main.js";
+    main.onload = () => {
+      if (typeof initTabs === "function") initTabs();
+      if (typeof initHeroAnimation === "function") initHeroAnimation();
+      // Add other initializers if needed
+    };
+    document.body.appendChild(main);
+
+    const dropdown = document.createElement("script");
+    dropdown.src = "/js/dropdown.js";
+    document.body.appendChild(dropdown);
+  });
+</script>
+<script src="path/to/background.js"></script>
+
+</body>
+</html>

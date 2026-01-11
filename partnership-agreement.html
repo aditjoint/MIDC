@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 🔒 Inline Protection Fallback -->
+<link rel="stylesheet" href="/css/protect.css" /> <!-- 🔒 Protection CSS -->
+<link rel="stylesheet" href="css/legal.css">
+
+  <style>
+    html, body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    input, textarea, select, label, a, button {
+      -webkit-user-select: text;
+      -moz-user-select: text;
+      -ms-user-select: text;
+      user-select: text;
+    }
+  </style>
+</head>
+  
+  <div class="container">
+    <!-- Header -->
+    <div class="header-content">
+      <a href="../index.html" class="logo">
+        <img src="/images/logo.png" alt="ADAM Consult Logo">
+      </a>
+      <div class="cta-button">
+        <a href="../index.html" class="btn-primary">Home</a>
+      </div>
+      <div class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+
+  <!-- ===== Main Content ===== -->
+  <main style="text-align:center; padding: 20px;">
+    <h1>Partnership Agreement</h1>
+    <img src="../images/lto15-partner.png" 
+         alt="Partnership Agreement" 
+         style="max-width: 100%; height: auto; margin-top: 20px;" />
+  </main>
+
+
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Partner with ADAM Consult for Growth & Innovation?</h2>
+                <p> Whether you're a startup seeking strategic guidance or an investor looking for high-potential ventures, we provide the expertise and network to help your vision succeed.</p>
+                <a href="../contact.html" class="btn btn-primary">Let's Collaborate</a>
+            </div>
+        </div>
+    </section>
+
+
+<!-- DO NOT TOUCH BELOW CODES -->
+  
+ <!-- ✅ Footer Placeholder -->
+  <div id="footer-placeholder"></div>    
+ <!-- ✅ Load header and footer dynamically and then initialize scripts -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Load Header
+    fetch("/header.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header-placeholder").innerHTML = html;
+
+        // ✅ Wait for DOM injection, then bind mobile menu
+        const toggle = document.getElementById("menu-toggle");
+        const nav = document.getElementById("mobile-menu");
+
+        if (toggle && nav) {
+          toggle.addEventListener("click", function () {
+            nav.classList.toggle("active");
+          });
+        }
+
+        // ✅ Optional: re-run dropdown initialization if needed
+        if (typeof initDropdowns === "function") initDropdowns();
+      });
+
+    // Load Footer
+    fetch("/footer.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("footer-placeholder").innerHTML = html;
+
+        // ✅ Load protection script after footer
+        const protect = document.createElement("script");
+        protect.src = "/js/imgTextProtect.js";
+        document.body.appendChild(protect);
+      });

@@ -1,0 +1,95 @@
+
+
+/* ===== protect.css — Content & Image Protection (Zoom Friendly) ===== */
+
+/* ✅ Protection is only active if .protection-enabled is on <body> */
+body.protection-enabled {
+  -webkit-touch-callout: none;
+}
+
+/* ✅ Base scroll & zoom allowed */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  /* allow pinch zoom */
+  touch-action: auto !important;
+  -ms-touch-action: auto !important;
+  -webkit-user-select: auto !important;
+  user-select: auto !important;
+}
+
+/* ✅ Allow input & form interaction always */
+input, textarea, select, label, a, button {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+  pointer-events: auto;
+}
+
+/* 🚫 Block interaction with images (when enabled) */
+body.protection-enabled img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+  -webkit-touch-callout: none !important;
+  user-select: none !important;
+  pointer-events: none !important;
+}
+
+/* 🚫 Disable selection on static content (when enabled) */
+body.protection-enabled h1,
+body.protection-enabled h2,
+body.protection-enabled h3,
+body.protection-enabled h4,
+body.protection-enabled h5,
+body.protection-enabled h6,
+body.protection-enabled p,
+body.protection-enabled span,
+body.protection-enabled strong,
+body.protection-enabled div:not(.allow-select) {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+/* 🖨️ Fully block printing (when enabled) */
+@media print {
+  body.protection-enabled {
+    display: none !important;
+  }
+}
+
+/* ✅ Protected image utility class */
+body.protection-enabled img.protected-img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+  pointer-events: none !important;
+}
+
+/* ✅ Optional overlay wrapper to block save-as and drag */
+body.protection-enabled .img-wrapper {
+  position: relative;
+  display: inline-block;
+}
+body.protection-enabled .img-wrapper img {
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+body.protection-enabled .img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 9999;
+  cursor: default;
+}

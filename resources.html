@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>ADAM Consult - Your Trusted Partner in Engineering, Infrastructure, and Digital Growth</title>
+  <meta name="description" content="We provide integrated solutions across Static Machinery, Equipment, Energy Distribution and Metering, IT and Non-IT Facility Infrastructure, Digital Transformation (Telecom, IT, and Industrial Automation), Strategic Consulting, and Product Marketing. With a focus on innovation and operational excellence, we help organizations modernize their infrastructure, optimize performance, and achieve sustainable growth across diverse sectors." />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+   <link rel="stylesheet" href="/css/protect.css" /> <!-- 🔒 Protection CSS -->
+
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- 🔒 Inline Protection Fallback -->
+  <style>
+    html, body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      margin: 0;
+      padding: 0;
+    }
+    input, textarea, select, label, a, button {
+      -webkit-user-select: text;
+      -moz-user-select: text;
+      -ms-user-select: text;
+      user-select: text;
+    }
+
+    /* Optional: fallback padding if JS fails */
+    main {
+      padding-top: 70px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <section 
+        <div style="max-width: 800px; margin: 0 auto;">
+          <h2 style="font-size: 2rem; margin-bottom: 1rem;">Documents</h2>
+          <p style="margin-bottom: 1.5rem;">Contact us for important resources and reference materials from ADAM Consult.</p>
+
+          <ul style="list-style: none; padding: 0;">
+                          
+              <li style="margin-bottom: 1rem;">
+              <a href=" https://drive.google.com/file/d/196WhGtH8lJYzSYXgS7JlsjoDifOYf4C0/view?usp=sharing" style="text-decoration: none; color: #0056b3;">
+              📄 👉 Doing Business in India - Process and Investment Guidelines
+              </a>
+                </li>
+
+              <li style="margin-bottom: 1rem;">
+              <a href="https://drive.google.com/file/d/16kOkSmJ4NZWVn9zlbkhCQzj994DiLpbT/view?usp=sharing" style="text-decoration: none; color: #0056b3;">
+              📄 👉 India-First Technology as a Business Continuity Imperative
+              </a>
+                </li>
+
+              <li style="margin-bottom: 1rem;">
+                <a href="https://drive.google.com/file/d/1hKDdRKph-0Ed10xMjo5XOrVlc0kUzKaJ/view?usp=sharing" target="_blank" style="text-decoration: none; color: #0056b3;">
+               📄 Hyperscale Data Center - Build
+                 </a>
+              </li>
+            
+            <li style="margin-bottom: 1rem;">
+              <a href="https://drive.google.com/file/d/1GbsOjx5NgvtVSMk7AF8zHK3HnpLX64wW/view?usp=sharing" style="text-decoration: none; color: #0056b3;">
+                📄 DC Facility Build - 10MW-40MW-IT Load
+              </a>
+            </li>
+            
+            <li style="margin-bottom: 1rem;">
+              <a href="https://drive.google.com/file/d/1E2kIZMHJt9t7WFXfkAbR370_GHuBwDRo/view?usp=sharing"text-decoration: none; color: #0056b3;">
+                📄 Smart Waste Management and Circular Resource Optimization
+              </a>
+            </li>
+            
+            <li style="margin-bottom: 1rem;">
+              <a href="https://docs.google.com/document/d/1W-xD3hiSzcRWbnhgKm5lbvibROaXymuy9IEzK2GEcJg/edit?tab=t.0" target="_blank" style="text-decoration: none; color: #0056b3;">
+                📄 Drone Delivery Station (Techno Commercial Doc)
+              </a>
+            </li>
+
+              <li style="margin-bottom: 1rem;">
+              <a href="/docs/energy-management-whitepaper.pdf" target="_blank" style="text-decoration: none; color: #0056b3;">
+                📄 Energy Management Whitepaper (PDF)
+              </a>
+            </li>
+            
+            <li style="margin-bottom: 1rem;">
+              <a href="/docs/green-initiatives-roadmap.pdf" target="_blank" style="text-decoration: none; color: #0056b3;">
+                📄 Green Initiatives Roadmap (PDF)
+              </a>
+            </li>
+
+           </ul>
+      </div>
+    </section>
+  </div>
+</main>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Infrastructure?</h2>
+                <p>Contact us today to discuss how our technology and engineering solutions can help your organization achieve efficiency, sustainability, and innovation.</p>
+                <a href="../contact.html" class="btn btn-primary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+
+
+  
+  <!-- ✅ Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ✅ Dynamic header/footer loader & scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const headerPlaceholder = document.getElementById("header-placeholder");
+      const footerPlaceholder = document.getElementById("footer-placeholder");
+      const main = document.querySelector("main");
+
+      // --- Load Header ---
+      fetch("/header.html")
+        .then(res => res.text())
+        .then(html => {
+          headerPlaceholder.innerHTML = html;
+
+          // Adjust main padding dynamically
+          const adjustMainPadding = () => {
+            const header = document.querySelector("header");
+            if(header && main) main.style.paddingTop = header.offsetHeight + "px";
+          };
+          adjustMainPadding();
+          window.addEventListener("resize", adjustMainPadding);
+
+          // Mobile menu toggle
+          const toggle = document.getElementById("menu-toggle");
+          const nav = document.getElementById("mobile-menu");
+          if (toggle && nav) {
+            toggle.addEventListener("click", function () {
+              nav.classList.toggle("active");
+            });
+          }
+
+          if (typeof initDropdowns === "function") initDropdowns();
+        });
+
+      // --- Load Footer ---
+      fetch("/footer.html")
+        .then(res => res.text())
+        .then(html => {
+          footerPlaceholder.innerHTML = html;
+
+          const protect = document.createElement("script");
+          protect.src = "/js/imgTextProtect.js";
+          document.body.appendChild(protect);
+        });
+
+      // --- Load core scripts ---
+      const mainScript = document.createElement("script");
+      mainScript.src = "/js/main.js";
+      mainScript.onload = () => {
+        if (typeof initTabs === "function") initTabs();
+        if (typeof initHeroAnimation === "function") initHeroAnimation();
+      };
+      document.body.appendChild(mainScript);
+
+      const dropdownScript = document.createElement("script");
+      dropdownScript.src = "/js/dropdown.js";
+      document.body.appendChild(dropdownScript);
+
+      // --- Daily background ---
+      if(main) {
+        const today = new Date();
+        const day = today.getDate();
+        main.style.backgroundImage = `url('/images/daily-backgrounds/bg-${day}.jpg')`;
+        main.style.backgroundSize = 'cover';
+        main.style.backgroundPosition = 'center';
+        main.style.backgroundRepeat = 'no-repeat';
+        main.style.backgroundAttachment = 'fixed'; // or 'scroll'
+      }
+    });
+  </script>
+
+</body>
+</html>

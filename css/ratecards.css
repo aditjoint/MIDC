@@ -1,0 +1,141 @@
+/* ===== Global Styles ===== */
+html, body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Ensure the background doesn't scroll */
+}
+
+/* Ensure the watermark and table area stays visible even with page overflow */
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  overflow: visible; /* Allow children elements (like watermark) to overflow */
+}
+
+/* ===== Table Container (horizontal scroll) ===== */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+}
+
+/* ===== Watermark only behind ERP and UPS tables ===== */
+.erp-table-container,
+.ups-table-container {
+  position: relative; /* position relative for watermark */
+  z-index: 1;         /* ensures watermark stays behind table content */
+}
+
+/* Watermark styling, specific to ERP and UPS tables */
+.erp-table-container::before,
+.ups-table-container::before {
+  content: "https://adamconsult.com";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 36px;           /* adjust the size of the text */
+  color: rgba(0,0,0,0.1);    /* subtle watermark text color */
+  z-index: -1;               /* ensures watermark stays behind table content */
+  pointer-events: none;      /* prevents watermark from blocking table interaction */
+  white-space: nowrap;
+  max-width: 100%;            /* ensure watermark text doesn’t overflow */
+  overflow: hidden;          /* prevent watermark from flowing outside */
+  text-overflow: ellipsis;   /* Optional: adds ellipsis if the watermark text is too long */
+}
+
+/* ===== Base Table Styles ===== */
+table {
+  border-collapse: separate !important; /* must be separate for sticky column */
+  border-spacing: 0;
+  font-size: 14px;
+  background: #fff;
+  min-width: 1200px; /* ensures horizontal scroll */
+}
+
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+  white-space: nowrap;
+}
+
+/* ===== Table Headers ===== */
+thead {
+  background: #444;
+  color: #fff;
+}
+
+/* ===== Sticky First Column for All Tables ===== */
+table th:first-child,
+table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  background: #fff;
+  border-right: 1px solid #ddd;
+}
+
+table th:first-child {
+  background: #444;
+  color: #fff;
+  z-index: 5; /* header above cells */
+}
+
+/* ===== ERP Table Column Widths ===== */
+.erp-table th:nth-child(1), .erp-table td:nth-child(1) { width:20%; }
+.erp-table th:nth-child(2), .erp-table td:nth-child(2) { width:20%; }
+.erp-table th:nth-child(3), .erp-table td:nth-child(3) { width:10%; }
+.erp-table th:nth-child(4), .erp-table td:nth-child(4) { width:10%; }
+.erp-table th:nth-child(5), .erp-table td:nth-child(5) { width:10%; }
+.erp-table th:nth-child(6), .erp-table td:nth-child(6) { width:10%; }
+.erp-table th:nth-child(7), .erp-table td:nth-child(7) { width:20%; }
+
+/* ===== UPS Table Column Widths ===== */
+.ups-table th:nth-child(1), .ups-table td:nth-child(1) { width:10%; }
+.ups-table th:nth-child(2), .ups-table td:nth-child(2) { width:20%; }
+.ups-table th:nth-child(3), .ups-table td:nth-child(3) { width:35%; }
+.ups-table th:nth-child(4), .ups-table td:nth-child(4) { width:20%; }
+.ups-table th:nth-child(5), .ups-table td:nth-child(5) { width:15%; }
+
+/* ===== hu1000 & su1300 Table Column Widths ===== */
+.hu1000-table th:nth-child(1), .hu1000-table td:nth-child(1),
+.su1300-table th:nth-child(1), .su1300-table td:nth-child(1) { width: 35%; }
+
+.hu1000-table th:nth-child(2), .hu1000-table td:nth-child(2),
+.su1300-table th:nth-child(2), .su1300-table td:nth-child(2) { width: 65%; }
+
+/* ===== Notes ===== */
+.note {
+  margin: 20px 0;
+  padding: 15px;
+  background: #f9f9f9;
+  border-left: 4px solid #444;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1200px) {
+  .hu1000-table,
+  .su1300-table {
+    min-width: 100%; /* allow table to shrink a bit on smaller screens */
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+  
+  }
+
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  table {
+    width: 100%;
+    font-size: 12px;
+  }
+}

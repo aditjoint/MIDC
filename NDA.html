@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Non-Disclosure Agreement (NDA) | ADIT Joint LLP / ADAM Consult</title>
+
+  <!-- Existing Styles -->
+  <link rel="stylesheet" href="/css/protect.css" />
+  <link rel="stylesheet" href="/css/legal.css" />
+
+  <!-- Inline layout + print-friendly rules -->
+  <style>
+    :root {
+      --page-width: 900px;
+      --accent: #0a2a43;
+      --muted: #666;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      color: #222;
+      background: #fff;
+      -webkit-font-smoothing:antialiased;
+    }
+    /* Light watermark (screen only) */
+    body::after {
+      content: "CONFIDENTIAL";
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-30deg);
+      font-size: 4.5rem;
+      color: rgba(10,42,67,0.04);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .container {
+      width: min(var(--page-width), calc(100% - 40px));
+      margin: 36px auto;
+      padding: 26px;
+      background: #fff;
+      z-index: 1;
+    }
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .logo img { height: 56px; }
+    .print-btn { text-align: right; margin-bottom: 8px; }
+    .print-btn button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    h1 { color: var(--accent); margin: 6px 0 12px; font-size: 1.6rem; border-bottom: 2px solid rgba(10,42,67,0.08); padding-bottom: 8px; }
+    h2 { color: var(--accent); margin-top: 18px; font-size: 1.05rem; }
+    p { margin: 10px 0; }
+    ul { margin: 6px 0 12px 20px; }
+    table.signature { width: 100%; border-collapse: collapse; margin-top: 18px; }
+    table.signature th, table.signature td {
+      border: 1px solid #cfcfcf;
+      padding: 10px;
+      vertical-align: top;
+    }
+    footer { margin-top: 24px; color: var(--muted); font-size: 0.9rem; border-top: 1px dashed #eee; padding-top: 10px; text-align: center; }
+
+    /* Prevent content selection except inputs/buttons */
+    html, body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    input, textarea, select, label, a, button {
+      -webkit-user-select: text;
+      -moz-user-select: text;
+      -ms-user-select: text;
+      user-select: text;
+    }
+
+    /* Print rules */
+    @media print {
+      body::after { display: none; } /* hide watermark in print */
+      .print-btn, .header-content { display: none; }
+      .container { width: 100%; margin: 0; padding: 0.5in; box-shadow: none; }
+      a::after { content: " (" attr(href) ")"; font-size: 0.9em; color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header-content">
+      <a href="/" class="logo"><img src="/images/logo.png" alt="ADAM Consult Logo"></a>
+      <div style="display:flex;gap:12px;align-items:center;">
+        <a class="btn-primary" href="/" style="text-decoration:none;color:var(--accent)">Home</a>
+      </div>
+    </div>
+
+        <div class="print-btn" style="text-align:center; margin:30px 0;">
+          <button 
+          type="button" 
+          onclick="window.open('https://drive.google.com/file/d/1GHgF0VocBKHn0z6wYEtZs_SzMD4GZct2/view?usp=sharing', '_blank');">
+          🖨️ "NDA-Read/Accepted-Request Download(PDF)"
+        </button>
+        </div>
+    
+    <!-- Title -->
+    <h1>Non-Disclosure Agreement (NDA)</h1>
+    <p><strong>Last Updated:</strong> May 27, 2025</p>
+ 
+    <section>
+      <p>
+        This Non-Disclosure Agreement ("Agreement") is entered into by and between
+        <strong>ADIT Joint LLP</strong> and its consulting division <strong>ADAM Consult</strong> (collectively,
+        the "Disclosing Party"), having its principal place of business at Navi Mumbai, India, and the
+        <strong>Receiving Party</strong> (the individual, company, agency, customer, partner, or other entity
+        accessing or engaging with ADAM Consult). Disclosing Party and Receiving Party are collectively the
+        "Parties" and individually a "Party".
+      </p>
+    </section>
+
+    <!-- 20 Clauses -->
+    <h2>1. Definition of Confidential Information</h2>
+    <p>
+      "Confidential Information" means all proprietary, technical, business, financial, operational,
+      strategic, or other information disclosed by the Disclosing Party (including client, vendor or partner
+      data) in any form (oral, written, electronic or otherwise) that is designated confidential or would
+      reasonably be considered confidential by its nature. This includes, without limitation, plans,
+      proposals, pricing, reports, software, source code, designs, blueprints, trade secrets, marketing and
+      sales strategies, financials, customer lists, personnel information, R&D, inventions, and
+      derivatives thereof.
+    </p>
+
+    <h2>2. Purpose</h2>
+    <p>The Receiving Party shall use Confidential Information solely for the specific, written purpose agreed with the Disclosing Party (the "Purpose").</p>
+
+    <h2>3. Obligations of the Receiving Party</h2>
+    <ul>
+      <li>Maintain strict confidentiality and not disclose Confidential Information except as permitted herein.</li>
+      <li>Use Confidential Information only for the Purpose.</li>
+      <li>Restrict access to employees, contractors or agents with a legitimate need-to-know and who are bound by written confidentiality obligations at least as protective as this Agreement.</li>
+      <li>Implement and maintain reasonable technical and organizational measures to protect Confidential Information.</li>
+      <li>Promptly notify the Disclosing Party of any unauthorized access, disclosure or breach.</li>
+    </ul>
+
+    <h2>4. Exclusions from Confidential Information</h2>
+    <p>Confidential Information does not include information which: (a) is or becomes publicly available through no breach by the Receiving Party; (b) was already in the Receiving Party's lawful possession prior to disclosure; (c) is lawfully obtained from a third party without confidentiality obligations; or (d) is independently developed without use of the Disclosing Party's Confidential Information. Information that must be disclosed by law shall be handled as set out in Clause 19 (Notices & Legal Requests).</p>
+
+    <h2>5. Ownership and Intellectual Property</h2>
+    <p>All Confidential Information and related intellectual property rights remain the exclusive property of the Disclosing Party. No license or transfer of rights is granted except as expressly set forth in writing.</p>
+
+    <h2>6. Term and Survival</h2>
+    <p>This Agreement is effective from the date of execution and remains in force while Confidential Information is exchanged and for five (5) years after termination of discussions or engagements, unless otherwise agreed in writing. Obligations regarding trade secrets shall survive for as long as the information remains a trade secret under applicable law.</p>
+
+    <h2>7. Return or Destruction of Materials</h2>
+    <p>Upon written request or on termination of the Purpose, the Receiving Party shall promptly return or permanently destroy all Confidential Information (including copies and derivatives) and provide a written certification of such return or destruction.</p>
+
+    <h2>8. Independent Testing and Validation</h2>
+    <p>The Receiving Party is responsible for independently testing and validating any products, services or solutions provided by the Disclosing Party or its partners. The Disclosing Party provides Confidential Information "as is" and makes no warranties regarding fitness, accuracy or suitability unless explicitly set out in a separate written agreement.</p>
+
+    <h2>9. No Liability for Third-Party Communications</h2>
+    <p>The Disclosing Party is not responsible for any agreements, communications, transactions, or representations made directly between the Receiving Party and third parties, including partners or advisors, unless explicitly authorized in writing by the Disclosing Party.</p>
+
+    <h2>10. Liability and Indemnification</h2>
+    <p>The Receiving Party shall indemnify, defend and hold harmless ADIT Joint LLP, ADAM Consult and their affiliates, officers, employees and agents from and against any claims, liabilities, damages, losses or expenses (including reasonable attorneys' fees) arising out of the Receiving Party's breach of this Agreement, misuse of Confidential Information or violation of applicable law.</p>
+
+    <h2>11. Injunctive and Equitable Relief</h2>
+    <p>The Receiving Party acknowledges that unauthorized disclosure or use of Confidential Information may cause irreparable harm for which monetary damages would be inadequate. The Disclosing Party is therefore entitled to seek injunctive or equitable relief in addition to other remedies, without necessity of posting bond or proving actual damages.</p>
+
+    <h2>12. Reference to Website Terms</h2>
+    <p>The Receiving Party acknowledges that it has read and agrees to be bound by the terms, policies and disclaimers published at <a href="https://www.adamconsult.com" target="_blank" rel="noopener noreferrer">www.adamconsult.com</a>. Those online terms are incorporated by reference and form part of this Agreement; in case of conflict, the provision more protective of the Disclosing Party shall prevail.</p>
+      
+    <h2>13. Compliance, Data Protection & Security</h2>
+    <p>The Receiving Party shall comply with all applicable data protection, privacy and cybersecurity laws and regulations. Where personal data is included in Confidential Information, the Receiving Party will process such data only in accordance with the Disclosing Party's instructions and applicable law.</p>
+
+    <h2>14.Information Security & Data Handling</h2>
+    <p>The Receiving Party shall comply with all applicable data protection, cybersecurity, and privacy laws. Any unauthorized access, transmission, or storage of the Disclosing Party’s data—whether digital or physical—shall constitute a material breach of this Agreement, entitling the Disclosing Party to immediate injunctive relief.</p>
+    
+    <h2>15. No Conflict or Non-Compliance by Receiving Party</h2>
+    <p>The Receiving Party represents and warrants that execution and performance of this Agreement will not violate any law, contract, obligation or policy applicable to it. The Receiving Party is solely responsible for ensuring such compliance and shall indemnify the Disclosing Party for any breach of this representation.</p>
+
+    <h2>16. No Obligation to Proceed</h2>
+    <p>Execution of this Agreement does not obligate the Disclosing Party to enter into any further agreement or business transaction. The Disclosing Party may terminate discussions or negotiations at any time without liability.</p>
+
+    <h2>17. Non-Solicitation </h2>
+    <p>During the term of any Engagement and for a period of twelve (12) months thereafter, the Receiving Party shall not directly solicit for employment any employee or contractor of the Disclosing Party with whom the Receiving Party had substantive contact as part of the Purpose.</p>
+
+    <h2>18. Remedies & Costs</h2>
+    <p>All remedies under this Agreement are cumulative. The prevailing Party in any enforcement action shall be entitled to recover reasonable legal fees and costs. The Receiving Party shall be responsible for all costs of enforcement, including attorneys' fees.</p>
+
+    <h2>19. Notices & Lawful Requests</h2>
+    <p>Notices under this Agreement shall be in writing and delivered to the contacts provided by the Parties. If disclosure is required by law or order, the Receiving Party shall, where lawful, promptly notify the Disclosing Party and cooperate in any lawful effort to obtain confidential treatment or protective orders.</p>
+
+    <h2>20. Governing Law and Dispute Resolution</h2>
+    <p>This Agreement is governed by the laws of India. The Parties shall attempt to resolve disputes amicably. Failing that, disputes shall be submitted to binding arbitration under the Arbitration and Conciliation Act, 1996, with seat in Navi Mumbai / Mumbai, India, unless the Disclosing Party elects to pursue court action in the courts of Navi Mumbai.</p>
+
+    <h2>21. Miscellaneous, Severability & Execution</h2>
+    <p>This Agreement constitutes the entire agreement regarding Confidential Information between the Parties and supersedes prior discussions. Amendments must be in writing and signed by authorized representatives. If any provision is held invalid, the remainder shall continue. This Agreement may be executed in counterparts and by electronic acceptance, which shall be binding.</p>
+
+    <!-- Signatures -->
+    <table class="signature" role="presentation">
+      <tr>
+        <th>For ADIT Joint LLP | ADAM Consult</th>
+        <th>For Receiving Party</th>
+      </tr>
+      <tr>
+        <td>
+          Authorized Signatory<br />
+          Name: ___________________________<br />
+          Title: ___________________________<br />
+          Date: ___________________________<br />
+          Seal / Stamp (if applicable)
+        </td>
+        <td>
+          Authorized Signatory<br />
+          Name: ___________________________<br />
+          Title: ___________________________<br />
+          Date: ___________________________<br />
+          Seal / Stamp (if applicable)
+        </td>
+      </tr>
+    </table>
+
+        <footer style="text-align:center; margin-top:40px; font-size:14px; color:#555;">
+          © 2025 <strong>ADIT Joint LLP</strong> | <strong>ADAM Consult</strong>. All Rights Reserved.  
+          Use of this document and any related materials constitutes acceptance of terms published at  
+          <a href="https://adamconsult.com/termsofuse.html" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             style="color:#047857; text-decoration:none; font-weight:600;">
+            https://www.adamconsult.com/legal
+          </a>.
+        </footer>
+
+  </div>
+
+ 
+</body>
+</html>

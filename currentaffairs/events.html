@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>ADAM Consult - Your Trusted Partner in Engineering, Infrastructure, and Sustainability</title>
+  <meta name="description" content="We provide integrated solutions across Static Machinery, Equipment, Energy Distribution and Metering, IT and Non-IT Facility Infrastructure, Digital Transformation (Telecom, IT, and Industrial Automation), Strategic Consulting, and Product Marketing. With a focus on innovation and operational excellence, we help organizations modernize their infrastructure, optimize performance, and achieve sustainable growth across diverse sectors." />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+  <link rel="stylesheet" href="/css/protect.css" /> <!-- 🔒 Protection CSS -->
+
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- 🔒 Inline Protection Fallback -->
+  <style>
+    html, body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    input, textarea, select, label, a, button {
+      -webkit-user-select: text;
+      -moz-user-select: text;
+      -ms-user-select: text;
+      user-select: text;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ✅ Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- Added DCIM dashboard CSS here -->
+  <style>
+    /* DCIM Cards CSS */
+    .campaign-section {
+      margin: 40px 20px 20px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: center;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .campaign-section h1 {
+      font-size: 36px;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .campaign-section p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 0;
+    }
+
+    .rack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      width: 100%;
+    }
+
+    .rack {
+      background: linear-gradient(135deg, #ffffffcc, #f0f0f0cc);
+      padding: 25px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-height: 200px;
+      user-select: none;
+    }
+
+    .rack:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .rack-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 18px;
+    }
+
+    .sensor {
+      font-size: 16px;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .sensor span:last-child {
+      font-weight: 700;
+      color: #000;
+    }
+
+    .temp-bar {
+      width: 100%;
+      height: 10px;
+      border-radius: 5px;
+      background: #ddd;
+      margin-bottom: 15px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.7);
+    }
+
+    .temp-bar-fill {
+      height: 100%;
+      border-radius: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: width 0.5s ease;
+    }
+
+    /* Statuses */
+    .status {
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 6px;
+      margin-top: auto;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      user-select: none;
+    }
+
+    .status.ok {
+      background-color: #28a745;
+      color: #fff;
+      box-shadow: 0 0 10px #28a745aa;
+    }
+
+    .status.warning {
+      background-color: #ffc107;
+      color: #444;
+      box-shadow: 0 0 10px #ffc107aa;
+    }
+
+    .status.alert {
+      background-color: #dc3545;
+      color: #fff;
+      box-shadow: 0 0 10px #dc3545aa;
+    }
+
+    .fas {
+      font-size: 18px;
+      margin-right: 6px;
+      flex-shrink: 0;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .rack-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        padding: 15px;
+      }
+      .rack {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+  <!-- Campaign Section -->
+  <div class="campaign-section">
+    <h1>Sample cases - Environmental Monitoring & Alerts</h1>
+  </div>
+
+  <!-- DCIM Monitoring Cards Grid -->
+  <section class="rack-grid">
+    <!-- Example Card -->
+    <div class="rack">
+      <div class="rack-title">Cabinet 01</div>
+      <div class="sensor"><span>Temp</span><span>36°C</span></div>
+      <div class="temp-bar">
+        <div class="temp-bar-fill" style="width: 72%; background: #28a745;"></div>
+      </div>
+      <div class="sensor"><span>Humidity</span><span>45%</span></div>
+      <div class="sensor"><span>Power</span><span>2.3 kW</span></div>
+      <div class="status ok">
+        <i class="fas fa-check-circle"></i> All Systems Normal
+      </div>
+    </div>
+
+    <div class="rack">
+      <div class="rack-title">Cabinet 02</div>
+      <div class="sensor"><span>Temp</span><span>42°C</span></div>
+      <div class="temp-bar">
+        <div class="temp-bar-fill" style="width: 88%; background: #dc3545;"></div>
+      </div>
+      <div class="sensor"><span>Humidity</span><span>58%</span></div>
+      <div class="sensor"><span>Power</span><span>3.5 kW</span></div>
+      <div class="status alert">
+        <i class="fas fa-exclamation-triangle"></i> High Temperature!
+      </div>
+    </div>
+
+    <div class="rack">
+      <div class="rack-title">Power Monitoring - Floor A1</div>
+      <div class="sensor"><span>Input Voltage</span><span>230V</span></div>
+      <div class="sensor"><span>Load Current</span><span>18A</span></div>
+      <div class="sensor"><span>UPS Status</span><span>Active</span></div>
+      <div class="status ok">
+        <i class="fas fa-check-circle"></i> Redundant Power Active
+      </div>
+    </div>
+
+    <div class="rack">
+      <div class="rack-title">HVAC Zone 3 - 1st Floor Hall</div>
+      <div class="sensor"><span>Room Temp</span><span>27.5°C</span></div>
+      <div class="sensor"><span>Cooling Unit Load</span><span>67%</span></div>
+      <div class="status warning">
+        <i class="fas fa-exclamation-triangle"></i> High Load Detected
+      </div>
+    </div>
+
+    <div class="rack">
+      <div class="rack-title">Access Control - Rack Bay 5</div>
+      <div class="sensor"><span>Last Access</span><span>10:32 AM</span></div>
+      <div class="sensor"><span>Auth Method</span><span>RFID</span></div>
+      <div class="status alert">
+        <i class="fas fa-user-lock"></i> Unauthorized Attempt Logged!
+      </div>
+    </div>
+
+    <div class="rack">
+      <div class="rack-title">Leak Sensor - Battery Room</div>
+      <div class="sensor"><span>Leak Detected</span><span>YES</span></div>
+      <div class="sensor"><span>Last Event</span><span>5 mins ago</span></div>
+      <div class="status alert">
+        <i class="fas fa-water"></i> Leak Detected - Escalated
+      </div>
+    </div>
+
+    <div class="rack">
+      <div class="rack-title">Genset A - Backup Power</div>
+      <div class="sensor"><span>Fuel Level</span><span>78%</span></div>
+      <div class="sensor"><span>Status</span><span>Test Mode</span></div>
+      <div class="status ok">
+        <i class="fas fa-sync-alt"></i> Auto-Start Function OK
+      </div>
+    </div>
+
+    <!-- Data Center Cards -->
+<div class="rack">
+  <div class="rack-title">Cabinet 06 - Server Room</div>
+  <div class="sensor"><span>Temp</span><span>29°C</span></div>
+  <div class="temp-bar">
+    <div class="temp-bar-fill" style="width: 58%; background: #28a745;"></div>
+  </div>
+  <div class="sensor"><span>Humidity</span><span>40%</span></div>
+  <div class="sensor"><span>Power</span><span>1.9 kW</span></div>
+  <div class="status ok">
+    <i class="fas fa-check-circle"></i> All Systems Normal
+  </div>
+</div>
+
+<div class="rack">
+  <div class="rack-title">Battery Room - DC1</div>
+  <div class="sensor"><span>Battery Temp</span><span>33°C</span></div>
+  <div class="temp-bar">
+    <div class="temp-bar-fill" style="width: 66%; background: #ffc107;"></div>
+  </div>
+  <div class="sensor"><span>Charge Level</span><span>78%</span></div>
+  <div class="status warning">
+    <i class="fas fa-exclamation-triangle"></i> Elevated Battery Temperature
+  </div>
+</div>
+
+<div class="rack">
+  <div class="rack-title">Fire Alarm Panel - Data Hall 2</div>
+  <div class="sensor"><span>Status</span><span>Normal</span></div>
+  <div class="sensor"><span>Last Test</span><span>2025-07-06</span></div>
+  <div class="status ok">
+    <i class="fas fa-check-circle"></i> System Operational
+  </div>
+</div>
+
+<div class="rack">
+  <div class="rack-title">Cooling Tower 1 - External</div>
+  <div class="sensor"><span>Water Temp</span><span>18°C</span></div>
+  <div class="sensor"><span>Flow Rate</span><span>320 L/min</span></div>
+  <div class="sensor"><span>Vibration</span><span>Normal</span></div>
+  <div class="status ok">
+    <i class="fas fa-check-circle"></i> Cooling Stable
+  </div>
+</div>
+
+<!-- Environment Cards -->
+<div class="rack">
+  <div class="rack-title">Clean Room 4 - LAB Room</div>
+  <div class="sensor"><span>Temp</span><span>22°C</span></div>
+  <div class="temp-bar">
+    <div class="temp-bar-fill" style="width: 44%; background: #28a745;"></div>
+  </div>
+  <div class="sensor"><span>Humidity</span><span>50%</span></div>
+  <div class="sensor"><span>Air Quality</span><span>Good</span></div>
+  <div class="status ok">
+    <i class="fas fa-check-circle"></i> Environment Stable
+  </div>
+</div>
+
+<div class="rack">
+  <div class="rack-title">Backup Generator - Generator</div>
+  <div class="sensor"><span>Fuel Level</span><span>60%</span></div>
+  <div class="sensor"><span>Status</span><span>Online</span></div>
+  <div class="status ok">
+    <i class="fas fa-sync-alt"></i> Auto-Start Enabled
+  </div>
+</div>
+
+<div class="rack">
+  <div class="rack-title">MRI Machine - Operational Status</div>
+  <div class="sensor"><span>Temperature</span><span>24°C</span></div>
+  <div class="sensor"><span>Power Consumption</span><span>8.5 kW</span></div>
+  <div class="status ok">
+    <i class="fas fa-check-circle"></i> Machine Online
+  </div>
+</div>
+
+<div class="rack">
+  <div class="rack-title"> HVAC - Zone 5</div>
+  <div class="sensor"><span>Temp</span><span>20°C</span></div>
+  <div class="sensor"><span>Cooling Load</span><span>75%</span></div>
+  <div class="status warning">
+    <i class="fas fa-exclamation-triangle"></i> Load High
+  </div>
+</div>
+
+<!-- Manufacturing Plant Cards -->
+<div class="rack">
+  <div class="rack-title">CNC Machine 12 - Shop Floor</div>
+  <div class="sensor"><span>Spindle Temp</span><span>80°C</span></div>
+  <div class="temp-bar">
+    <div class="temp-bar-fill" style="width: 80%; background: #dc3545;"></div>
+  </div>
+  <div class="sensor"><span>Vibration Level</span><span>Low</span></div>
+  <div class="status alert">
+    <i class="fas fa-exclamation-circle"></i> Overheating Detected
+  </div>
+</div>
+
+<div class="rack">
+  <div class="rack-title">Assembly Line - Section B</div>
+  <div class="sensor"><span>Line Speed</span><span>85%</span></div>
+  <div class="sensor"><span>Energy Consumption</span><span>12 kW</span></div>
+  <div class="status ok">
+    <i class="fas fa-check-circle"></i> Running Smoothly
+  </div>
+</div>
+
+<div class="rack">
+  <div class="rack-title">Fuel Tank - Plant Backup</div>
+  <div class="sensor"><span>Fuel Level</span><span>32%</span></div>
+  <div class="sensor"><span>Last Refill</span><span>3 days ago</span></div>
+  <div class="status warning">
+    <i class="fas fa-exclamation-triangle"></i> Low Fuel Alert
+  </div>
+</div>
+
+<div class="rack">
+  <div class="rack-title">Compressor - Plant 1</div>
+  <div class="sensor"><span>Pressure</span><span>125 PSI</span></div>
+  <div class="sensor"><span>Operating Hours</span><span>1200 hrs</span></div>
+  <div class="status ok">
+    <i class="fas fa-check-circle"></i> Normal Operation
+  </div>
+</div>
+
+<!-- Additional Infrastructure Cards -->
+<div class="rack">
+  <div class="rack-title">Fire Detection - Warehouse 3</div>
+  <div class="sensor"><span>Status</span><span>Normal</span></div>
+  <div class="sensor"><span>Last Check</span><span>2025-07-07 08:00</span></div>
+  <div class="status ok">
+    <i class="fas fa-check-circle"></i> No Issues
+  </div>
+</div>
+
+<div class="rack">
+  <div class="rack-title">Water Leak Sensor - Main Storage</div>
+  <div class="sensor"><span>Leak Detected</span><span>NO</span></div>
+  <div class="sensor"><span>Last Event</span><span>12 hours ago</span></div>
+  <div class="status ok">
+    <i class="fas fa-check-circle"></i> Dry and Secure
+  </div>
+</div>
+
+<div class="rack">
+  <div class="rack-title">Solar Power Inverter</div>
+  <div class="sensor"><span>Output Voltage</span><span>380V</span></div>
+  <div class="sensor"><span>Current</span><span>35A</span></div>
+  <div class="status ok">
+    <i class="fas fa-check-circle"></i> Operating Normally
+  </div>
+</div>
+
+<div class="rack">
+  <div class="rack-title">Air Quality Sensor - Warehouse</div>
+  <div class="sensor"><span>CO2 Level</span><span>600 ppm</span></div>
+  <div class="sensor"><span>VOC Level</span><span>Low</span></div>
+  <div class="status ok">
+    <i class="fas fa-check-circle"></i> Air Quality Good
+  </div>
+</div>
+
+
+    
+    <!-- Add more cards here as needed... -->
+  </section>
+
+
+
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Infrastructure?</h2>
+                <p>Contact us today to discuss how our technology and engineering solutions can help your organization achieve efficiency, sustainability, and innovation.</p>
+                <a href="../contact.html" class="btn btn-primary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+
+  
+    
+ <!-- ✅ Footer Placeholder -->
+  <div id="footer-placeholder"></div>    
+ <!-- ✅ Load header and footer dynamically and then initialize scripts -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Load Header
+    fetch("/header.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header-placeholder").innerHTML = html;
+
+        // ✅ Wait for DOM injection, then bind mobile menu
+        const toggle = document.getElementById("menu-toggle");
+        const nav = document.getElementById("mobile-menu");
+
+        if (toggle && nav) {
+          toggle.addEventListener("click", function () {
+            nav.classList.toggle("active");
+          });
+        }
+
+        // ✅ Optional: re-run dropdown initialization if needed
+        if (typeof initDropdowns === "function") initDropdowns();
+      });
+
+    // Load Footer
+    fetch("/footer.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("footer-placeholder").innerHTML = html;
+
+        // ✅ Load protection script after footer
+        const protect = document.createElement("script");
+        protect.src = "/js/imgTextProtect.js";
+        document.body.appendChild(protect);
+      });
+
+    // ✅ Load core scripts after all above
+    const main = document.createElement("script");
+    main.src = "/js/main.js";
+    main.onload = () => {
+      if (typeof initTabs === "function") initTabs();
+      if (typeof initHeroAnimation === "function") initHeroAnimation();
+      // Add other initializers if needed
+    };
+    document.body.appendChild(main);
+
+    const dropdown = document.createElement("script");
+    dropdown.src = "/js/dropdown.js";
+    document.body.appendChild(dropdown);
+  });
+</script>
+
+</body>
+</html>

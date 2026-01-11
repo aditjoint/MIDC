@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ADIT JOINT LLP - Letterhead</title>
+
+  <!-- Optional: use a web font; remove if offline -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand-color: #0f172a; /* dark navy */
+      --accent: #0ea5a4; /* teal accent */
+      --muted: #6b7280;
+      --page-width: 210mm; /* A4 width */
+    }
+
+    /* Print settings */
+    @page { size: A4; margin: 18mm; }
+    @media print {
+      body { margin: 0; }
+      .page { box-shadow: none; border: none; }
+    }
+
+    body{
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: #f5f7fb;
+      color: #111827;
+      padding: 18px;
+      -webkit-print-color-adjust: exact;
+    }
+
+    .page{
+      width: 100%;
+      max-width: calc(var(--page-width));
+      margin: 12px auto;
+      background: #ffffff;
+      border-radius: 6px;
+      box-shadow: 0 6px 18px rgba(12, 15, 25, 0.06);
+      overflow: hidden;
+    }
+
+    header{
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      border-bottom: 1px solid #e6edf3;
+      background: linear-gradient(90deg, rgba(14,165,164,0.04), rgba(14,165,164,0));
+    }
+
+    .logo {
+      width: 86px;
+      height: 86px;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(2,6,23,0.04);
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .company {
+      flex: 1;
+      text-align: left;
+    }
+
+    .company h1{
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 0.4px;
+      color: var(--brand-color);
+    }
+
+    .company .tagline{
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .company .address{
+      margin-top: 10px;
+      font-size: 13px;
+      color: #374151;
+      line-height: 1.35;
+    }
+
+    .contact {
+      text-align: right;
+      min-width: 220px;
+      font-size: 13px;
+      color: #374151;
+    }
+
+    .contact .label{ font-weight:600; color:var(--brand-color); display:block; }
+    .contact div{ margin-top:6px; }
+
+    main.letter-body{
+      padding: 28px;
+      font-size: 14px;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    .letter-meta{
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .letter-meta .left { min-width: 220px; }
+    .letter-meta .right { min-width: 220px; text-align:right; color:var(--muted); font-size:13px; }
+
+    .subject{
+      margin: 12px 0 18px;
+      font-weight: 600;
+      color: var(--brand-color);
+    }
+
+    .signature{
+      margin-top: 36px;
+    }
+
+    .sig-line{
+      width: 240px;
+      border-top: 1px solid #111827;
+      margin-top: 28px;
+      padding-top:6px;
+      font-weight:600;
+      color: var(--brand-color);
+    }
+
+    footer{
+      border-top: 1px dashed #e6edf3;
+      padding: 12px 28px;
+      font-size: 12px;
+      color: var(--muted);
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+    }
+
+    .meta-list{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .meta-list span{ display:inline-block; }
+
+    @media (max-width:760px){
+      header { flex-direction: row; padding: 16px; }
+      .contact { text-align: left; min-width: 160px; }
+    }
+
+    .placeholder { color: #9ca3af; }
+  </style>
+</head>
+<body>
+
+  <div class="page" role="document" aria-label="ADIT JOINT LLP Letterhead">
+    <header>
+   
+
+      <div class="company">
+        <h1>ADIT JOINT LLP</h1>
+        <div class="tagline">Engineering & IT Automation</div>
+        <div class="address">
+          Registered Office: A-603, SaiKrupa C.H.S, Plot-100, Sector-27,
+          Nerul East, Navi Mumbai – 400706, Maharashtra, India
+        </div>
+      </div>
+
+      <div class="contact" aria-label="Contact details">
+        <div class="label">Contact</div>
+        <div>Phone: <span class="placeholder">+91-22-35667733</span></div>
+        <div>Email: <span class="placeholder">aditjoint@gmail.com, ls@adamconsult.com</span></div>
+       
+      </div>
+    </header>
+
+    <main class="letter-body">
+      <div class="letter-meta">
+        <div class="left">
+          <strong>Date:</strong> <span class="placeholder">____ / ____ / ______</span>
+        </div>
+        <div class="right"></div>
+      </div>
+
+      <div>
+        To,<br>
+        <strong class="placeholder"></strong><br>
+        <span class="placeholder"></span>
+      </div>
+
+      <div class="subject">Subject: <span class="placeholder">Opening of Current Account</span></div>
+
+      <p>Dear Sir / Madam,</p>
+
+      <p>
+        This is to inform you that <strong>ADIT JOINT LLP</strong> (LLPIN: <span class="placeholder">ACN-8171</span>)
+        having its registered office at A-603, SaiKrupa C.H.S, Plot-100, Sector-27, Nerul East, Navi Mumbai – 400706,
+        is authorized to open and operate a Current Account with your branch. Kindly find enclosed the necessary documents
+        and the specimen signatures of the authorised signatories.
+      </p>
+
+      <p>
+        Please do the needful and provide us with the account opening formalities and any further documentation required.
+      </p>
+
+      <div class="signature">
+        <div class="sig-line">For ADIT JOINT LLP</div>
+        <div style="margin-top:6px; color:var(--muted); font-size:13px;">
+          (Designated Partner / Authorised Signatory)
+        </div>
+      </div>
+
+      <div style="margin-top:18px; color:var(--muted); font-size:13px;">
+        Encl.: <span class="placeholder">KYC documents, PAN, Address Proof, LLPIN, Specimen Signatures</span>
+      </div>
+    </main>
+
+    <footer>
+      <div class="meta-list">
+        <span><strong>LLPIN:</strong> <span class="placeholder">ACN-8171</span></span>
+        <span><strong>PAN:</strong> <span class="placeholder">ACJFA5861C</span></span>
+      </div>
+      <div style="text-align:right;">
+        <small>Registered Office: A-603, SaiKrupa C.H.S, Plot-100, Sector-27, Nerul East, Navi Mumbai - 400706</small>
+      </div>
+    </footer>
+  </div>
+  
+</body>
+</html>
