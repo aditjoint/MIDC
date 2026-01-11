@@ -236,12 +236,19 @@
              target="_blank" 
              rel="noopener noreferrer" 
              style="color:#047857; text-decoration:none; font-weight:600;">
-            https://www.adamconsult.com/legal
+            www.adamconsult.com/legal
           </a>.
         </footer>
 
   </div>
 
- 
+  <!-- Load Protection Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const protect = document.createElement("script");
+      protect.src = "../js/imgTextProtect.js";
+      document.body.appendChild(protect);
+    });
+  </script>
 </body>
 </html>
