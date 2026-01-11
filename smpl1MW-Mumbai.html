@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>1 MW Data Center Cost – Mumbai MIDC</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      background: #f4f6fb;
+      color: #222;
+    }
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+    .hero {
+      background: #1f3b7b;
+      color: #fff;
+      padding: 18px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 22px;
+    }
+    .sub {
+      font-size: 13px;
+      opacity: 0.85;
+    }
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(190px,1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .kpi {
+      background: rgba(255,255,255,0.08);
+      border-radius: 6px;
+      padding: 10px 12px;
+      text-align: left;
+    }
+    .kpi-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      opacity: 0.8;
+      letter-spacing: 0.04em;
+    }
+    .kpi-value {
+      font-size: 17px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    h2 {
+      font-size: 17px;
+      margin: 22px 0 8px;
+      color: #1f3b7b;
+    }
+    h3 {
+      font-size: 15px;
+      margin: 18px 0 6px;
+      color: #333;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 14px 14px 10px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+      margin-top: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+    th, td {
+      padding: 6px 8px;
+      border: 1px solid #e0e3ef;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f0f2ff;
+      font-weight: 600;
+    }
+    tbody tr:nth-child(even) td {
+      background: #fafbff;
+    }
+
+    .note {
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .highlight {
+      color: #b3261e;
+      font-weight: 600;
+    }
+
+    /* Calculator */
+    .calc {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 14px;
+      align-items: center;
+      margin-top: 8px;
+    }
+    .calc label {
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .calc input[type="number"] {
+      width: 100%;
+      margin-top: 4px;
+      padding: 6px 8px;
+      border-radius: 4px;
+      border: 1px solid #c5c9e0;
+      font-size: 13px;
+    }
+    .calc-output {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 999px;
+      font-size: 11px;
+      background: #fff3cd;
+      color: #8a6d3b;
+      margin-left: 4px;
+    }
+    .tag {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 999px;
+      font-size: 10px;
+      background: #e3f2fd;
+      color: #0b5394;
+      margin-left: 4px;
+    }
+  </style>
+  <link rel="stylesheet" href="../../css/protect.css">  <!-- ⬅️ ../ for css folder -->
+
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER / KPIs -->
+  <div class="hero">
+    <h1>1 MW Data Center Build – Mumbai MIDC (Tier III, N+N)</h1>
+    <div class="sub">
+      Non‑IT infrastructure cost comparison: generic India vs realistic Mumbai (Q1 2026).
+    </div>
+
+    <div class="kpi-row">
+      <div class="kpi">
+        <div class="kpi-label">Base Build Cost (Generic)</div>
+        <div class="kpi-value">₹58.50 CR / MW</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Realistic Mumbai Cost</div>
+        <!-- 58.5 × 1.376 ≈ 80.5  → 37.6% higher headline -->
+        <div class="kpi-value">₹80.50 CR / MW</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Cost Increase vs Base</div>
+        <div class="kpi-value">+37.6%</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">USD Equivalent (Mumbai)</div>
+        <div class="kpi-value">$9.50 MN / MW</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY MUMBAI HIGHER -->
+  <div class="card">
+    <h2>Why Mumbai cost is higher</h2>
+    <p class="note">
+      Mumbai MIDC builds incur premium costs for raised flooring, power substation upgrades,
+      statutory approvals, environmental compliance, and a realistic contingency buffer,
+      leading to a <span class="highlight">37.6%</span> higher per‑MW capex vs the generic model.
+    </p>
+    <ul class="note">
+      <li>Raised floor upgrade: about ₹2 CR for proper 10,000 SFT thermal floor.</li>
+      <li>Power substation: from ₹2 CR to ₹4 CR for MSEDCL transmission upgrades.</li>
+      <li>New additions: ≈₹14 CR for environment, IT, utilities, approvals, connectivity, and reserve.</li>
+      <li>Contingency buffer: 12% of base cost to cover overruns, missing in the original sheet.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="card">
+    <h2>Section 1 – % Share of Components (Base, Non‑IT)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>% Share</th>
+          <th>Amount (₹ CR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Civil & Architectural</td>
+          <td>16.2%</td>
+          <td>9.48</td>
+        </tr>
+        <tr>
+          <td>Electrical (UPS, panels, transformers, cabling)</td>
+          <td>40.0%</td>
+          <td>23.40</td>
+        </tr>
+        <tr>
+          <td>Mechanical / Cooling (DX‑PAC, ducting, pumps, tanks)</td>
+          <td>20.0%</td>
+          <td>11.70</td>
+        </tr>
+        <tr>
+          <td>BMS / DCIM / Fire & Safety</td>
+          <td>8.0%</td>
+          <td>4.68</td>
+        </tr>
+        <tr>
+          <td>Other infra, prelims, builder margins</td>
+          <td>15.8%</td>
+          <td>9.14</td>
+        </tr>
+        <tr>
+          <th>Total</th>
+          <th>100%</th>
+          <th>58.50</th>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">
+      These percentages mirror a typical Tier III build where electrical is the largest block,
+      followed by mechanical and civil for a 1 MW non‑IT capex. [file:24]
+    </p>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="card">
+    <h2>Section 2 – Base Capex Breakdown (₹58.50 CR)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Category</th>
+          <th>% of Build</th>
+          <th>Amount (₹ CR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Civil & Structural Works</td><td>16.2%</td><td>9.48</td></tr>
+        <tr><td>2</td><td>Electrical – UPS, Panels, Transformers, Cabling</td><td>40.0%</td><td>23.40</td></tr>
+        <tr><td>3</td><td>Mechanical – PAC Units, Ducting, Piping</td><td>20.0%</td><td>11.70</td></tr>
+        <tr><td>4</td><td>Fire Detection & Suppression</td><td>4.0%</td><td>2.34</td></tr>
+        <tr><td>5</td><td>BMS / DCIM / Monitoring</td><td>4.0%</td><td>2.34</td></tr>
+        <tr><td>6</td><td>Miscellaneous, Prelims & Contractor Margin</td><td>15.8%</td><td>9.24</td></tr>
+        <tr><th colspan="3">Total Base Build (Non‑IT)</th><th>58.50</th></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 3 – MUMBAI ADDITIONS -->
+  <div class="card">
+    <h2>Section 3 – Mumbai‑specific additions (₹22 CR gross)</h2>
+
+    <h3>A. Add to original estimates (₹3 CR)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Item Description</th>
+          <th>Category</th>
+          <th>Amount (₹ CR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Raised floor – proper thermal insulation & distribution</td>
+          <td>Civil</td>
+          <td>+1.00</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Power substation upgrade (₹2 → ₹4 CR) – MSEDCL transformer & connection</td>
+          <td>Electrical</td>
+          <td>+2.00</td>
+        </tr>
+        <tr>
+          <th colspan="3">Subtotal – Adjusted Items</th>
+          <th>3.00</th>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>B. Mumbai‑specific new additions (₹14.95 CR)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Item Description</th>
+          <th>Category</th>
+          <th>Amount (₹ CR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>3</td><td>Land lease / lease premium – MIDC (1 year)</td><td>Land</td><td>0.50</td></tr>
+        <tr><td>4</td><td>Utility connections – MSEDCL, BMC water, sewer</td><td>Infrastructure</td><td>0.75</td></tr>
+        <tr><td>5</td><td>EIA & environmental clearance</td><td>Compliance</td><td>0.50</td></tr>
+        <tr><td>6</td><td>Structural & foundation reinforcement (seismic, soil)</td><td>Civil</td><td>1.50</td></tr>
+        <tr><td>7</td><td>IT infra & structured cabling (Tier III ready)</td><td>IT</td><td>1.50</td></tr>
+        <tr><td>8</td><td>Redundant fibre connectivity – primary + backup</td><td>Connectivity</td><td>0.50</td></tr>
+        <tr><td>9</td><td>Testing & Tier III certification (TIA‑942 / Uptime)</td><td>Compliance</td><td>0.50</td></tr>
+        <tr><td>10</td><td>MIDC statutory approvals – building, fire, PCB, shop act</td><td>Compliance</td><td>0.75</td></tr>
+        <tr><td>11</td><td>Water recycling system</td><td>Infrastructure</td><td>0.50</td></tr>
+        <tr><td>12</td><td>Contingency buffer (12% of base cost)</td><td>Reserve</td><td>7.00</td></tr>
+        <tr>
+          <th colspan="3">Subtotal – New Additions</th>
+          <th>14.95</th>
+        </tr>
+        <tr>
+          <th colspan="3">TOTAL ADDITIONS (A + B)</th>
+          <th>17.95</th>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="note">
+      Net realistic Mumbai total becomes ₹76.45 CR (₹58.50 + ₹17.95), which is
+      about <span class="highlight">30.7%</span> higher than the generic base.
+      The assumption of ~37% is a conservative figure ~₹80.50 CR for sensitivity analysis.
+    </p>
+  </div>
+
+  <!-- SECTION 4 – FINAL ESTIMATE TABLE -->
+  <div class="card">
+    <h2>Section 4 – Final 1 MW DC estimate (Mumbai MIDC)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Cost Component</th>
+          <th>Category</th>
+          <th>Amount (₹ CR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Base build cost (original generic)</td>
+          <td>Baseline</td>
+          <td>58.50</td>
+        </tr>
+        <tr>
+          <td>Additions (Mumbai‑specific)</td>
+          <td>Mumbai MIDC</td>
+          <td>+17.95</td>
+        </tr>
+        <tr>
+          <th>Realistic total (working baseline)</th>
+          <th>Mumbai MIDC</th>
+          <th>76.45</th>
+        </tr>
+        <tr>
+          <td>USD equivalent (@ ₹8.5 / USD)</td>
+          <td>Reference</td>
+          <td>$9.0 MN</td>
+        </tr>
+        <tr>
+          <td>Cost increase vs base (76.45 vs 58.50)</td>
+          <td>Delta</td>
+          <td>+30.7%</td>
+        </tr>
+        <tr>
+          <td>Conservative upper‑bound (80.50 vs 58.50)</td>
+          <td>Stress case</td>
+          <td>+37.6%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 5 – UNIT COSTS (optional, sample rows kept short) -->
+  <div class="card">
+    <h2>Section 5 – Unit cost breakdown (sample)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Component Description</th>
+          <th>% of Build</th>
+          <th>Capex (₹ CR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>2× 500 kVA UPS (N+N) incl. batteries</td><td>10%</td><td>5.85</td></tr>
+        <tr><td>2</td><td>11 kV transformer & HT panels</td><td>8%</td><td>4.68</td></tr>
+        <tr><td>3</td><td>DX PAC units with N+25% redundancy</td><td>12%</td><td>7.02</td></tr>
+        <tr><td>4</td><td>Civil shell & interiors (20,000 SFT @ ₹3,000/SFT)</td><td>16%</td><td>9.36</td></tr>
+        <tr><td>5</td><td>BMS, metering & integrated monitoring</td><td>4%</td><td>2.34</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- CALCULATOR -->
+  <div class="card">
+    <h2>Capex calculator – scale to any MW (Mumbai)</h2>
+
+    <div class="calc">
+      <div>
+        <label>
+          IT load (MW)
+          <span class="badge">per MW model</span>
+        </label>
+        <input type="number" id="mwInput" value="1" min="0.25" step="0.25">
+        <p class="note">
+          Uses ₹58.50 CR/MW as generic base and ₹76.45 CR/MW as realistic Mumbai baseline.
+        </p>
+      </div>
+      <div class="calc-output">
+        <div><strong>Generic base estimate:</strong> <span id="baseTotal"></span></div>
+        <div><strong>Mumbai realistic estimate:</strong> <span id="mumTotal"></span></div>
+        <div><strong>Incremental premium:</strong> <span id="deltaAbs"></span></div>
+        <div>
+          <strong>Premium % vs base:</strong>
+          <span id="deltaPct"></span>
+          <span class="tag">should show ≈30.7% at 1 MW</span>
+        </div>
+      </div>
+    </div>
+
+    <h3>Cost comparison: base vs Mumbai</h3>
+    <p class="note">
+      For 1 MW: base = ₹58.50 CR, Mumbai realistic = ₹76.45 CR → premium = ₹17.95 CR
+      which is <strong>30.7%</strong> above the generic baseline.
+      If the more conservative ₹80.50 CR number is used, the premium becomes
+      <strong>37.6%</strong>, consistent with the headline KPI. [file:24]
+    </p>
+
+
+<script>
+  // Per‑MW costs (in ₹ CR)
+  const BASE_PER_MW = 58.50;   // generic pan‑India estimate
+  const MUM_PER_MW  = 76.45;   // realistic Mumbai MIDC baseline
+
+  function formatCr(value) {
+    return "₹" + value.toFixed(2) + " CR";
+  }
+
+  function updateCalculator() {
+    const mwInput = document.getElementById("mwInput");
+    const mw = parseFloat(mwInput.value) || 0;
+
+    const baseTotal = BASE_PER_MW * mw;
+    const mumTotal  = MUM_PER_MW  * mw;
+    const deltaAbs  = mumTotal - baseTotal;
+    const deltaPct  = baseTotal > 0 ? (deltaAbs / baseTotal) * 100 : 0;
+
+    document.getElementById("baseTotal").textContent = formatCr(baseTotal);
+    document.getElementById("mumTotal").textContent  = formatCr(mumTotal);
+    document.getElementById("deltaAbs").textContent  = formatCr(deltaAbs);
+    document.getElementById("deltaPct").textContent  = deltaPct.toFixed(1) + " %";
+  }
+
+  document.getElementById("mwInput").addEventListener("input", updateCalculator);
+  updateCalculator();
+</script>
+
+
+
+            <!-- KEY NOTES -->
+            <div class="note">
+                <strong>📌 Key Assumptions (Mumbai-Specific):</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Build cost is <strong>per MW IT Load</strong> (Tier 3 / N+N redundancy)</li>
+                    <li><strong>Raised Floor:</strong> ₹10,000/SFT thermal insulation (₹1000/SFT)</li>
+                    <li><strong>Power Substation:</strong> ₹4 CR/MW for MSEDCL transformer upgrades (realistic for Mumbai)</li>
+                    <li><strong>MIDC Location:</strong> Assumes Taloja or Ambazari MIDC zones</li>
+                    <li><strong>Approval Timeline:</strong> 6-8 months (MIDC clearance included in cost)</li>
+                    <li><strong>Seismic Compliance:</strong> Zone II earthquake resistance (mandatory for Mumbai)</li>
+                    <li><strong>Contingency:</strong> 12% buffer for overruns (essential for MIDC projects)</li>
+                    <li><strong>Labor Costs:</strong> 5-10% premium vs national average (Mumbai metro area)</li>
+                    <li><strong>Material Costs:</strong> National rates apply (no significant regional difference)</li>
+                </ul>
+		</div>
+
+             <div class="alert-note">
+                <strong>🚨 EXCLUDED FROM THIS ESTIMATE:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Land Acquisition Cost:</strong> Only lease premium included (₹0.50 CR). Full land purchase = ₹3-8 CR (separate budget)</li>
+                    <li><strong>IT Equipment:</strong> Servers, switches, storage, networking gear = separate budget (₹20-30 CR for 1 MW deployment)</li>
+                    <li><strong>Taxes & GST:</strong> 18% GST on construction = additional ₹13.8 CR (included in some quotes, excluded here)</li>
+                    <li><strong>Finance Cost:</strong> Interest on 18-24 month construction period</li>
+                    <li><strong>Customer Setup & Customization:</strong> Facility-specific requirements (per customer)</li>
+                </ul>
+            </div>
+
+            <div class="info-note">
+                <strong>ℹ️ Mumbai Market Context (Q1 2026):</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>MSEDCL industrial tariff: ₹7.5-8.5/kWh (varies by MIDC zone)</li>
+                    <li>MIDC lease rates: ₹250-400/SFT/year (industrial land)</li>
+                    <li>Approval timeline: 4-8 weeks (DG), 4-6 weeks (Fire/PCB), 2-3 months (MIDC)</li>
+                    <li>Skilled labor availability: High (MIDC ecosystem mature)</li>
+                    <li>Logistics/Ports: Close proximity to JNPT reduces equipment lead time</li>
+                    <li>Vendor ecosystem: Competitive pricing for electrical & cooling equipment</li>
+                </ul>
+            <p style="margin-top: 10px; opacity: 0.8;">Disclaimer: Costs are indicative and based on market rates as of Jan 2026. Actual costs may vary ±10-15% based on site conditions, vendor negotiations, procurement timing, and currency fluctuations. MIDC-specific factors (location, accessibility, power availability) will impact final cost.</p>
+            </div>
+       
+ </div>
+ 
+
+  <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Load footer & protection script -->
+    <script>
+    fetch("../../footer.html")
+        .
+        .then(res => res.text())
+        .then(html
+ => {
+            document.getElementById("footer-placeholder").innerHTML = html;
+            const protect = document.createElement("
+("script");
+            protect.src = "../../js/imgTextProtect.js";
+            document.body.appendChild(protect);
+        })
+        .catch(err => {
+            console.error("Footer load failed:", err);
+            // Fallback footer
+            document.getElementById("footer-placeholder").innerHTML
+ = `
+                <footer style="background:#343a40;color:white;padding:20px;text-align:center;font-family:Roboto,sans-serif;">
+                    <div style="max-width:1200px;margin:0 auto;">
+                        <p>&copy; 2026 ADAM Consult - Data Center Infrastructure</p>
+                        <p style="opacity:0.8;margin-top:5px;font-size:0.85em;">MIDC | Mumbai | Maharashtra | India</p>
+                    </div>
+                </footer>
+            `;
+        });
+    </script>   
+</body>
+</html>

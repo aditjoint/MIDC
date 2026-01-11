@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1MW Data Center Build Cost Assumption - Tier 3</title>
+    <div><a href= "https://midc.adamconsult.com/dc-template/index.html">Return to Home</a><div>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; background: #f5f7fa; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 2em; margin-bottom: 10px; }
+        .header p { font-size: 0.95em; opacity: 0.9; }
+        .content { padding: 30px; }
+        .section-title { background: #667eea; color: white; padding: 12px 15px; margin-top: 25px; margin-bottom: 15px; border-radius: 4px; font-weight: 600; font-size: 1.05em; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 0.95em; }
+        thead { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        th { padding: 12px; text-align: left; font-weight: 600; border: 1px solid #764ba2; }
+        td { padding: 10px 12px; border: 1px solid #ddd; }
+        tbody tr:nth-child(odd) { background: #f9f9f9; }
+        tbody tr:nth-child(even) { background: #ffffff; }
+        tbody tr:hover { background: #e3f2fd; }
+        .total-row { background: #1e3c72 !important; color: white; font-weight: 600; }
+        .total-row td { border-color: #1e3c72; }
+        .number { text-align: right; font-weight: 500; }
+        .percentage { text-align: center; color: #28a745; font-weight: 600; }
+        .note { background: #fff3cd; padding: 12px; border-left: 4px solid #ffc107; margin-top: 20px; font-size: 0.9em; color: #333; }
+        .calc-section { background: #f0f4ff; padding: 20px; border-radius: 6px; margin: 20px 0; }
+        .calc-input { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+        .input-group { display: flex; gap: 10px; align-items: center; }
+        .input-group input { padding: 8px 12px; border: 1px solid #ddd; border-radius: 4px; width: 150px; font-size: 0.95em; }
+        .input-group button { background: #28a745; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; font-weight: 600; }
+        .input-group button:hover { background: #20c997; }
+        .summary-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .summary-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 6px; text-align: center; }
+        .summary-card h3 { font-size: 0.9em; opacity: 0.9; margin-bottom: 10px; }
+        .summary-card .value { font-size: 1.8em; font-weight: 700; }
+        footer { background: #f8f9fa; padding: 20px; text-align: center; font-size: 0.85em; color: #666; border-top: 1px solid #ddd; }
+    </style>
+    <!-- Your CSS links -->
+    <link rel="stylesheet" href="../../css/protect.css">  <!-- ⬅️ ../ for css folder -->
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>1 MW Data Center Build Cost Assumption</h1>
+            <p>Tier 3 Infrastructure Capex Estimation (INR/CR)</p>
+        </div>
+
+        <div class="content">
+            <!-- SUMMARY CARDS -->
+            <div class="summary-box">
+                <div class="summary-card">
+                    <h3>Total Build Cost</h3>
+                    <div class="value" id="totalCost">58.50</div>
+                    <small>INR/CR</small>
+                </div>
+                <div class="summary-card">
+                    <h3>Per MW Rate</h3>
+                    <div class="value">6.5</div>
+                    <small>MN USD</small>
+                </div>
+                
+		<div class="summary-card">
+                    <h3>Electrical %</h3>
+                    <div class="value">~40-45%</div>
+                </div>
+			  
+		  <div class="summary-card">
+                    <h3>Civil %</h3>
+                    <div class="value">~15-20%</div>
+                  </div>
+
+		  <div class="summary-card">
+                    <h3>MEP %</h3>
+                    <div class="value">~15-25%</div>
+                   </div>
+		
+                  <div class="summary-card">
+                    <h3>IBM and Others %</h3>
+                    <div class="value">~10-20%</div>
+                    <small>DCIM and Others</small>
+                </div>
+		
+            </div>
+
+            <!-- SECTION 1: Component Share -->
+            <div class="section-title">% Share of Components – Non IT</div>
+            <table>
+                <thead>
+                     <tr>
+                        <th>Component</th>
+                        <th class="percentage">% Share</th>
+                        <th class="number">Amount (INR/CR)</th>
+                    </tr>
+                </thead>
+                <tbody id="componentTableBody">
+                </tbody>
+            </table>
+
+            <!-- SECTION 2: Capex Breakdown -->
+            <div class="section-title">Capex for N+N (Tier 3) – Per MW IT Load</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 5%">S.No</th>
+                        <th>Category</th>
+                        <th class="percentage">% of Build</th>
+                        <th class="number">Amount (INR/CR)</th>
+                    </tr>
+                </thead>
+                <tbody id="capexTableBody">
+                </tbody>
+            </table>
+
+            <!-- SECTION 3: Unit Cost Breakdown -->
+            <div class="section-title">Case Study: Unit Costs of Major Components (1 MW DC Build – Tier 3)</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 5%">S.No</th>
+                        <th>Component Description</th>
+                        <th class="percentage">% of Build</th>
+                        <th class="number">Capex (INR/CR)</th>
+                    </tr>
+                </thead>
+                <tbody id="unitCostTableBody">
+                </tbody>
+            </table>
+
+            <!-- CALCULATOR -->
+            <div class="calc-section">
+                <h3 style="margin-bottom: 15px;">💰 Capex Calculator - Scale to Any MW</h3>
+                <div class="calc-input">
+                    <div class="input-group">
+                        <label for="mwInput" style="font-weight: 600;">Enter DC Capacity (MW):</label>
+                        <input type="number" id="mwInput" value="1" min="0.1" step="0.1">
+                    </div>
+                    <button onclick="calculateScaling()">Calculate Scaled Cost</button>
+                </div>
+                <div id="scalingResult" style="margin-top: 15px; display: none;">
+                    <strong>Scaled Cost for <span id="scaledMW">1</span> MW DC:</strong>
+                    <div style="font-size: 1.3em; color: #28a745; margin-top: 10px;">
+                        <strong id="scaledCost">58.50 INR/CR</strong> 
+                        (<span id="scaledUSD">6.5 MN USD</span>)
+                    </div>
+                </div>
+            </div>
+
+            <!-- NOTES -->
+            <div class="note">
+                <strong>📌 Important Assumptions:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Build cost is <strong>per MW IT Load</strong> (Tier 3 / N+N redundancy)</li>
+                    <li>Electrical work (40%) includes Panels, UPS, Transformers</li>
+                    <li>Cooling (DX-Based PAC) includes N+25% redundancy overhead</li>
+                    <li>Civil work includes 20,000 SFT @ 3000 INR/SFT average</li>
+                    <li>Battery options: VRLA standard OR Lithium/LTO as premium (add 2.5-4 CR)</li>
+                    <li>Power Substation is <strong>Additional</strong> (approx. 2 CR/MW)</li>
+                    <li>Approvals & Certifications (ISO, TIA-942, Uptime Institute) = Additional 2 CR</li>
+                    <li>Cost may vary ±15-20% based on geography, vendor relationships, and currency</li>
+                </ul>
+            </div>
+
+            <div class="note" style="background: #d1ecf1; border-left-color: #17a2b8;">
+                <strong>⚠️ Cost Variation Factors:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Land & acquisition costs NOT included in capex (separate land evaluation)</li>
+                    <li>IT equipment (servers, switches, storage) NOT included</li>
+                    <li>Telco connectivity & LAN cabling = Extra (per design)</li>
+                    <li>Customer setup & customization = Additional cost</li>
+                    <li>Taxes & regulatory compliance may add 10-15%</li>
+                    <li>Currency conversion (USD to INR) impacts final cost</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 ADAM Consult - Data Center Infrastructure Cost Estimation</p>
+            <p style="margin-top: 10px; opacity: 0.8;">Disclaimer: Costs are indicative and may vary based on site conditions, vendor procurement, and market conditions.</p>
+        </footer>
+    </div>
+
+    <script>
+        const totalBuildCost = 58.50; // INR/CR for 1 MW
+        const usdPerMW = 6.5; // Million USD
+
+        // Component Share Data
+        const componentData = [
+            { name: 'Civil', percentage: 16.24 },
+            { name: 'Electrical', percentage: 22.55 },
+            { name: 'Passive Cabling (Cat-A)', percentage: 7.53 },
+            { name: 'Diesel Generator (DG)', percentage: 16.09 },
+            { name: 'UPS', percentage: 10.50 },
+            { name: 'Precision Air Cooling (PAC)', percentage: 10.24 },
+            { name: 'Computer Room AC (CAC)', percentage: 1.93 },
+            { name: 'Fire Alarm & Suppression', percentage: 5.53 },
+            { name: 'VESDA Detection', percentage: 1.15 },
+            { name: 'Access Control', percentage: 2.83 },
+            { name: 'CCTV', percentage: 1.34 },
+            { name: 'Building Management System (BMS)', percentage: 2.85 },
+            { name: 'WLDS (Water Leak Detection)', percentage: 0.19 },
+            { name: 'Rodent Repellant', percentage: 0.29 },
+            { name: 'Public Address System', percentage: 0.73 }
+        ];
+
+        // Capex Breakdown
+        const capexData = [
+            { num: 1, category: 'Civil work', percentage: 20, amount: 11.70 },
+            { num: 2, category: 'Electrical (Low end: Panels, UPS, Trafos)', percentage: 40, amount: 23.40 },
+            { num: 3, category: 'DX-Based Cooling - PAC (N+25%)', percentage: 25, amount: 14.63 },
+            { num: 4, category: 'DC-BMS work', percentage: 5, amount: 2.93 },
+            { num: 5, category: 'Safety & Security', percentage: 5, amount: 2.93 },
+            { num: 6, category: 'Power Substation per MW', percentage: 'Additional', amount: 2.00 },
+            { num: 7, category: 'Approvals & Certifications', percentage: 'Additional', amount: 2.00 }
+        ];
+
+        // Unit Costs
+        const unitCostData = [
+            { num: 1, desc: 'Substation per MW × 4', percentage: '12.00%', amount: 4.00 },
+            { num: 2, desc: 'DG – 2250KVA (1.8MW) × 2 – Caterpillar/Cummins', percentage: '11.75%', amount: 4.00 },
+            { num: 3, desc: 'Transformer 2MVA × 2', percentage: '2.35%', amount: 0.80 },
+            { num: 4, desc: 'UPS 500 KVA × 4; 15-minute backup (VRLA Battery)', percentage: '10.28%', amount: 3.50 },
+            { num: 5, desc: 'Battery – Lithium 3.5V or LTO cell (Additional)', percentage: 'Premium', amount: '2.5-4' },
+            { num: 6, desc: 'Civil work (20,000 SFT × 3000/SFT)', percentage: '17.62%', amount: 6.00 },
+            { num: 7, desc: 'Electrical low-end (15%) + commissioning', percentage: '2.94%', amount: 1.00 },
+            { num: 8, desc: 'IBMS (9 components package; may increase 20%)', percentage: '7.34%', amount: 2.50 },
+            { num: 9, desc: 'PAC (20 units, 25TR) – Server Hall + Utilities', percentage: '11.75%', amount: 4.00 },
+            { num: 10, desc: 'Power Cabling', percentage: '2.94%', amount: 1.00 },
+            { num: 11, desc: 'LT Panel, DG Sync Panel', percentage: '5.87%', amount: 2.00 },
+            { num: 12, desc: 'Raised Floor (1000 Rs × 10,000 units); Thermal Insulation', percentage: '2.94%', amount: 1.00 },
+            { num: 13, desc: 'Telco Room (Voice & Data) Cabling', percentage: '0.73%', amount: 0.25 },
+            { num: 14, desc: 'Statutory Approvals (DG, MIDC, Fire, Safety, PCB, Explosive Licenses)', percentage: '0.73%', amount: 0.25 },
+            { num: 15, desc: 'Certifications & Compliances (ISO 9K/20K/27K, TIA-92, Uptime)', percentage: '4.41%', amount: 1.50 },
+            { num: 16, desc: 'CACs, Lighting, False Ceiling', percentage: '4.41%', amount: 1.50 },
+            { num: 17, desc: 'Incidentals & Logistics', percentage: '2.06%', amount: 0.70 }
+        ];
+
+        // Populate Component Table
+        function populateComponentTable() {
+            let html = '';
+            componentData.forEach(comp => {
+                const amount = (totalBuildCost * comp.percentage / 100).toFixed(2);
+                html += `<tr>
+                    <td>${comp.name}</td>
+                    <td class="percentage">${comp.percentage.toFixed(2)}%</td>
+                    <td class="number">₹${amount} CR</td>
+                </tr>`;
+            });
+            html += `<tr class="total-row">
+                <td><strong>Total</strong></td>
+                <td class="percentage"><strong>100.00%</strong></td>
+                <td class="number"><strong>₹${totalBuildCost.toFixed(2)} CR</strong></td>
+            </tr>`;
+            document.getElementById('componentTableBody').innerHTML = html;
+        }
+
+        // Populate Capex Table
+        function populateCapexTable() {
+            let html = '';
+            capexData.forEach(row => {
+                const pctText = typeof row.percentage === 'number' ? row.percentage + '%' : row.percentage;
+                html += `<tr>
+                    <td>${row.num}</td>
+                    <td>${row.category}</td>
+                    <td class="percentage">${pctText}</td>
+                    <td class="number">₹${row.amount.toFixed(2)} CR</td>
+                </tr>`;
+            });
+            html += `<tr class="total-row">
+                <td colspan="2"><strong>Total Capex (1 MW)</strong></td>
+                <td colspan="2" class="number"><strong>₹${totalBuildCost.toFixed(2)} CR (${(totalBuildCost * 100 / 100).toFixed(2)}%)</strong></td>
+            </tr>`;
+            document.getElementById('capexTableBody').innerHTML = html;
+        }
+
+        // Populate Unit Cost Table
+        function populateUnitCostTable() {
+            let html = '';
+            unitCostData.forEach(row => {
+                const amountText = typeof row.amount === 'number' ? '₹' + row.amount.toFixed(2) + ' CR' : row.amount + ' CR';
+                html += `<tr>
+                    <td>${row.num}</td>
+                    <td>${row.desc}</td>
+                    <td class="percentage">${row.percentage}</td>
+                    <td class="number">${amountText}</td>
+                </tr>`;
+            });
+            document.getElementById('unitCostTableBody').innerHTML = html;
+        }
+
+        // Scale Cost Calculator
+        function calculateScaling() {
+            const mwInput = parseFloat(document.getElementById('mwInput').value) || 1;
+            const scaledCost = (totalBuildCost * mwInput).toFixed(2);
+            const scaledUSD = (usdPerMW * mwInput).toFixed(2);
+            
+            document.getElementById('scaledMW').innerText = mwInput;
+            document.getElementById('scaledCost').innerText = '₹' + scaledCost + ' CR';
+            document.getElementById('scaledUSD').innerText = '$' + scaledUSD + ' MN';
+            document.getElementById('totalCost').innerText = scaledCost;
+            
+            document.getElementById('scalingResult').style.display = 'block';
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            populateComponentTable();
+            populateCapexTable();
+            populateUnitCostTable();
+        });
+    </script>
+
+ <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load footer & protection script -->
+    <script>
+    fetch("../../footer.html")
+        .
+        .then(res => res.text())
+        .then(html
+ => {
+            document.getElementById("footer-placeholder").innerHTML = html;
+            const protect = document.createElement("
+("script");
+            protect.src = "../../js/imgTextProtect.js";
+            document.body.appendChild(protect);
+        })
+        .catch(err => {
+            console.error("Footer load failed:", err);
+            // Fallback footer
+            document.getElementById("footer-placeholder").innerHTML
+ = `
+                <footer style="background:#343a40;color:white;padding:20px;text-align:center;font-family:Roboto,sans-serif;">
+                    <div style="max-width:1200px;margin:0 auto;">
+                        <p>&copy; 2026 ADAM Consult - Data Center Infrastructure</p>
+                        <p style="opacity:0.8;margin-top:5px;font-size:0.85em;">MIDC | Mumbai | Maharashtra | India</p>
+                    </div>
+                </footer>
+            `;
+        });
+    </script>
+
+
+
+</body>
+</html>
