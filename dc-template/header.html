@@ -1,28 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * { margin: 0; padding: 0; }
-        body { font-family: 'Roboto', sans-serif; }
-        .dc-navbar { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .dc-navbar h1 { font-size: 1.8em; margin: 0; }
-        .dc-navbar p { margin: 0; font-size: 0.9em; opacity: 0.9; }
-        .dc-nav-links a { color: white; margin-left: 20px; text-decoration: none; font-weight: 500; transition: all 0.3s; }
-        .dc-nav-links a:hover { opacity: 0.8; }
-    </style>
-</head>
-<body>
-<div class="dc-navbar">
-    <div>
-        <h1>ADAM Consult</h1>
-        <p>Data Center Infrastructure Excellence</p>
-    </div>
-    <div class="dc-nav-links">
-        <a href="index.html">Home</a>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>ADAM Consult - Your Trusted Partner in Engineering, Infrastructure, and Digital Growth</title>
+  <meta name="description" content="We provide integrated solutions across Static Machinery, Equipment, Energy Distribution and Metering, IT and Non-IT Facility Infrastructure, Digital Transformation (Telecom, IT, and Industrial Automation), Strategic Consulting, and Product Marketing. With a focus on innovation and operational excellence, we help organizations modernize their infrastructure, optimize performance, and achieve sustainable growth across diverse sectors." />
 
+<!-- Essential SEO Metadata -->
+  <title>ADAM Consult – DATA Centers | IT Services | Digital Solutions & Technology Consulting</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ADAM Consult offers Field Force Automation, Smart ERP, CRM, Chatbot, and Digital Transformation services tailored for growth." />
+  <meta name="keywords" content="Industrial IoT, Data Analytics, Field Force Management, ERP, CRM, eCommerce Development, Chatbot, Mobile Apps, IT Consulting" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph Metadata (Facebook, LinkedIn, WhatsApp) -->
+  <meta property="og:title" content="ADAM Consult – Digital Solutions & IT Consulting" />
+  <meta property="og:description" content="Transform your business with ADAM Consult's innovative IT services: ERP, CRM, IoT, mobile apps, and more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.adamconsult.com/" />
+  <meta property="og:image" content="https://www.adamconsult.com/assets/images/adam-thumbnail.jpg" />
+  <meta property="og:site_name" content="ADAM Consult" />
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ADAM Consult – Digital Solutions & IT Consulting" />
+  <meta name="twitter:description" content="Explore ADAM Consult's IT solutions for ERP, CRM, analytics, Digital Transformation and more." />
+  <meta name="twitter:image" content="https://www.adamconsult.com/assets/images/adam-thumbnail.jpg" />
+
+  <!-- Structured Data (JSON-LD placeholder) -->
+  <!--
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ADAM Consult",
+    "url": "https://www.adamconsult.com/",
+    "logo": "https://www.adamconsult.com/assets/images/logo.png",
+    "sameAs": [
+      "https://www.linkedin.com/company/adamconsult",
+      "https://twitter.com/adamconsult"
+    ]
+  }
+  </script>
+  -->
+
+  <!-- Optional: Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/protect.css" />
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- 🔒 Inline Protection Fallback -->
+  <style>
+    html, body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    input, textarea, select, label, a, button {
+      -webkit-user-select: text;
+      -moz-user-select: text;
+      -ms-user-select: text;
+      user-select: text;
+    }
+  </style>
+</head>
+
+  <body>
+<a href="/bot-trap.html" style="display:none;" tabindex="-1" aria-hidden="true">DoNotClick</a>
+
+<!-- ✅ Header Section -->
+<header class="adam-header">
+  <div class="container">
+    <div class="header-content">
+
+      <!-- Logo -->
+      <div class="logo">
+        <span class="logo-text"> </span>
+        <a href="/index.html">
+            <img src="/images/logo.png" alt="ADAM Consult Logo">
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle (with ID and fixed closing tag) -->
+      <div class="mobile-menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+
+<!-- Navigation Menu -->
+<nav class="main-nav" id="mobile-menu">
+  <ul class="nav-links">
+
+    <li><a href="/index.html">Home</a></li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropdown-toggle">
+        Use Cases <i class="fas fa-chevron-down"></i>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="/currentaffairs/news.html">Green Initiatives</a></li>
+      	<li><a href="/currentaffairs/bess.html">BESS_LTO</a></li>
+	<li><a href="/currentaffairs/events.html">Facility Monitoring & Alerts</a></li>
+	<li><a href="/currentaffairs/land-infrastructure.html">GreenField Initiatives</a></li>
+	</ul>
+   	 </li>
+   	
+
+    <li class="dropdown" style="display: none;">
+      <a href="javascript:void(0)" class="dropdown-toggle">
+        Investments <i class="fas fa-chevron-down"></i>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="/currentaffairs/252420rc.html">Opportunities Card</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</nav>
+
+
+      <!-- CTA Button -->
+      <div class="cta-button">
+        <a href="/contact.html" class="btn btn-primary">Get In Touch</a>
+      </div>
     </div>
-</div>
+  </div>
+</header>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADAM Consult - Infrastructure Builder</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/snl.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+</head>
+<body class="watermarked">
+    <div id="header-placeholder"></div>
+
+    <section class="section-padding" style="min-height: 80vh; padding: 40px 20px;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Infrastructure Configurator</h2>
+                <p>Build your BOM instantly with <strong>Reference Ex-Mumbai Pricing</strong>.</p>
+            </div>
+
+            <div id="snl-wrapper">
+                <div id="tool-status-bar"><span id="conn-status">Connecting...</span></div>
+                <div class="snl-container">
+                    <div class="snl-sidebar">
+                        <div class="snl-sidebar-header">Category</div>
+                        <button class="snl-nav-btn active" onclick="switchTab('compute')">Compute & Servers</button>
+                        <button class="snl-nav-btn" onclick="switchTab('storage')">Storage (SAN/NAS)</button>
+                        <button class="snl-nav-btn" onclick="switchTab('network')">Networking</button>
+                        <button class="snl-nav-btn" onclick="switchTab('security')">Security & Firewalls</button>
+                        <button class="snl-nav-btn" onclick="switchTab('software')">Software & OS</button>
+                        <button class="snl-nav-btn" onclick="switchTab('racks')">Infra (Racks/UPS)</button>
+                        <button class="snl-nav-btn" onclick="switchTab('endpoints')">Laptops & Desktops</button>
+                        <button class="snl-nav-btn" onclick="switchTab('cabling')">Structured Cabling</button>
+                        <button class="snl-nav-btn" onclick="switchTab('physical_sec')">CCTV & Access</button>
+                        <button class="snl-nav-btn" onclick="switchTab('av_room')">Meeting Room AV</button>
+                    </div>
+                    <div class="snl-content">
+                        <h3 id="section-title">Compute Infrastructure</h3>
+                        <div class="snl-form-group"><label>Select Model</label><select id="sel-model"><option value="0">Loading...</option></select></div>
+                        <div class="snl-form-group"><label>Add-ons</label><select id="sel-addon"><option value="0">-- None --</option></select></div>
+                        <div class="snl-form-group"><label>Qty</label><input type="number" id="sel-qty" value="1" min="1" max="500"></div>
+                        <button class="snl-add-btn" onclick="addToCart()">Add to BOM</button>
+                    </div>
+                    <div class="snl-boq">
+                        <div class="snl-boq-header">Bill of Materials</div>
+                        <div class="snl-boq-list" id="cart-list"><div class="empty-cart-msg">No items added yet.</div></div>
+                        <div class="snl-boq-footer">
+                            <div class="snl-row"><span>Total:</span><span id="subtotal-display">₹0</span></div>
+                            <div class="snl-row" style="color:#666;font-size:0.8rem;"><span>GST (18%):</span><span id="tax-display">₹0</span></div>
+                            <div class="snl-row snl-total"><span>Grand Total:</span><span id="grand-total">₹0</span></div>
+                            <div class="action-buttons" style="display:flex;gap:5px;margin-top:10px;">
+                                <button class="reset-btn" onclick="resetCart()">Reset</button>
+                                <button class="snl-quote-btn" onclick="openModal()">Request Quote</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="snl-terms">
+                <h3>Terms & Conditions</h3>
+                <ul>
+                    <li><strong>Price Protection:</strong> Prices are Reference Pricing (Ex-Mumbai) and subject to change without prior notice. Quotes are valid for 7 days.</li>
+                    <li><strong>Installation:</strong> Installation and Commissioning are <u>not inclusive</u>. These are charged extra based on scope.</li>
+                    <li><strong>Warranty & AMC:</strong> Warranty and Annual Maintenance Contracts (AMC) are provided directly by the OEM as per their standard policy.</li>
+                    <li><strong>Supplier Clauses:</strong> Please check with your specific supplier for delivery timelines and payment terms.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div id="quoteModal" class="modal-overlay">
+        <div class="modal-box">
+            <h3>Finalize Quote</h3>
+            <input type="text" id="cust-name" placeholder="Full Name">
+            <input type="email" id="cust-email" placeholder="Email Address">
+            <input type="text" id="cust-phone" placeholder="Phone Number">
+            <div class="modal-buttons">
+                <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+                <button class="submit-btn" id="btn-submit" onclick="submitToSheet()">Submit Inquiry</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>    
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/header.html").then(r=>r.text()).then(h=>{
+            document.getElementById("header-placeholder").innerHTML = h;
+            const t=document.getElementById("menu-toggle"), n=document.querySelector(".main-nav");
+            if(t&&n) t.addEventListener("click", ()=>nav.classList.toggle("open"));
+        });
+        fetch("/footer.html").then(r=>r.text()).then(h=>{
+            document.getElementById("footer-placeholder").innerHTML = h;
+            const s = document.createElement("script"); s.src = "../js/imgTextProtect.js"; document.body.appendChild(s);
+        });
+        const m = document.createElement("script"); m.src = "../js/main.js"; document.body.appendChild(m);
+      });
+    </script>
+    <script src="../js/snl.js"></script>
+</body>
+</html>
