@@ -1,7 +1,10 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-
-<!-- Footer -->
 <style>
+.footer-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .footer-flex {
   display: flex;
   justify-content: space-between;
@@ -10,29 +13,10 @@
   gap: 20px;
 }
 
-.footer-left {
-  flex: 1 1 300px; /* logo + description */
-}
-
-.footer-center {
-  flex: 2 1 500px; /* links columns */
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.footer-qr {
-  flex: 0 0 120px; /* QR code size */
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.footer-qr img {
-  width: 100px;
-  height: 100px;
-}
+.footer-left { flex: 1 1 300px; }
+.footer-center { flex: 2 1 500px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.footer-qr { flex: 0 0 120px; display: flex; justify-content: center; }
+.footer-qr img { width: 100px; height: 100px; }
 
 .footer-bottom {
   text-align: center;
@@ -43,27 +27,20 @@
 }
 </style>
 
-  <footer>
-  <div class="container footer-flex">
+<footer>
+  <div class="footer-wrapper footer-flex">
+    
     <div class="footer-left">
       <div class="footer-brand">      
-    <!-- Logo -->
-      <div class="logo">
-        <a href="../index.html">
+        <div class="logo">
+          <a href="/dc-template/index.html">
             <span class="logo-text"> </span>
-            <img src="../images/icon.png" alt="ADAM Consult Logo">
-        </a>
-      </div>
-
-
-          
- 
-  <p>
-    We serve as a strategic gateway for Infrastructure development, multi-vendor collaboration across the infrastructure lifecycle. We unify consultants, OEMs, and technology
-    partners to deliver efficient, sustainable, and scalable data center ecosystems.
-  </p>
-
-
+            <img src="/dc-template/images/icon.png" alt="ADAM Consult Logo">
+          </a>
+        </div>
+        
+        <p>ADAM Consult is a strategic gateway and modular collaboration hub that empowers cross-sector innovation. By uniting partners, consultants, and customers in a unified ecosystem, it enables high-impact partnerships that drive efficiency, connectivity, and long-term value across industries.</p>
+        
         <div class="social-links">
           <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
@@ -74,29 +51,29 @@
       <div class="link-group">
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="../../index.html">Home</a></li>
-          <li><a href="../../about.html">About Us</a></li>
-          <li><a href="../../contact.html">Contact</a></li>
-          <li><a href="../../advisors.html" style="display: none;">Advisors</a></li>
-          <li><a href="../../investment.html" style="display: none;">Start-up Advisory</a></li>
-          <li><a href="../../services/technology-infrastructure.html" style="display: none;">Enterprise Advisory</a></li>
-          <li><a href="../../resources.html" style="display: none;">Resources</a></li>
-          <li><a href="../../currentaffairs/blog.html">Reader's Choice</a></li>
-          <li><a href="../../currentaffairs/252420rc.html" style="display: none;">External Opportunities</a></li>
-          <li><a href="https://midc.adamconsult.com/dc-template/templates/dc-eva.html">.</a></li>	
-         </ul>
-        </div>
-
-     
-      <div class="link-group" style="display: none;">
-        <h3>Legal</h3>
-        <p><a href="../termsofuse.html">Terms of Use</a></p>
-        <p><a href="../dataprotection.html">Data Protection Policy</a></p>
-        <p><a href="../whistleblowing.html">Whistleblowing Policy</a></p>
-        <p><a href="../privacy&cookies.html">Privacy & Cookie Policy</a></p>
-        <p><a href="../partnership-agreement.html">Partnership Agreement</a></p>
+          <li><a href="/dc-template/index.html">Home</a></li>
+          <li><a href="/dc-template/about.html">About Us</a></li>
+          <li><a href="/dc-template/contact.html">Contact</a></li>
+          <li><a href="/dc-template/services/composite-infrastructure.html">Enterprise Advisory</a></li>
+        </ul>
       </div>
-      
+
+      <div class="link-group">
+        <h3>Actions</h3>
+        <ul>
+          <li><a href="https://midc.adamconsult.com" target="_blank" rel="noopener">Data Center Infrastructure</a></li>
+          <li><a href="https://erpbuild.adamconsult.com" target="_blank" rel="noopener">ERP & Customization</a></li>
+          <li><a href="/dc-template/templates/snl1.html">Enterprise IT Hardware Configurator</a></li>        
+        </ul>
+      </div>
+       
+      <div class="link-group">
+        <h3>Legal</h3>
+        <p><a href="/dc-template/termsofuse.html">Terms of Use</a></p>
+        <p><a href="/dc-template/dataprotection.html">Data Protection Policy</a></p>
+        <p><a href="/dc-template/privacy&cookies.html">Privacy & Cookie Policy</a></p>
+      </div>
+       
       <div class="link-group">
         <h3>Our Location</h3>
         <div class="footer-contact-grid">
@@ -106,7 +83,7 @@
           <a href="tel:+912235667733" class="contact-item">
             <i class="fas fa-phone-alt"></i><span>+91-22-3566-7733</span>
           </a>
-   
+    
           <a href="mailto:sales@adamconsult.com" class="contact-item">
             <i class="fas fa-envelope"></i>
             <span>
@@ -117,13 +94,12 @@
       </div>
     </div>
     
-    <!-- QR Code on the right side -->
     <div class="footer-qr">
-      <img src="../images/adam-qr.png" alt="QR Code" />
+      <img src="/dc-template/images/adam-qr.png" alt="QR Code" />
     </div>
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; 2025 ADAM Consult, ADIT Joint LLP. All rights reserved.</p>
+    <p>© 2025 ADAM Consult, ADIT Joint LLP. All rights reserved.</p>
   </div>
 </footer>
