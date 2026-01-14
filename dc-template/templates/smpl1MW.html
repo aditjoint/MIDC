@@ -4,15 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1MW Data Center Build Cost Assumption - Tier 3</title>
-    <div><a href= "https://midc.adamconsult.com/dc-template/index.html">Return to Home</a><div>
+    
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../css/responsive.css" />
+    <link rel="stylesheet" href="../../css/protect.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; background: #f5f7fa; padding: 20px; }
-        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden; }
-        .header { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 30px; text-align: center; }
-        .header h1 { font-size: 2em; margin-bottom: 10px; }
-        .header p { font-size: 0.95em; opacity: 0.9; }
+        body { font-family: 'Roboto', sans-serif; background: #f5f7fa; padding-bottom: 0; }
+        
+        /* RENAMED CLASS: Changed .container to .page-wrapper to avoid conflict with Header/Footer */
+        .page-wrapper { 
+            max-width: 1200px; 
+            margin: 20px auto; 
+            background: white; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+            overflow: hidden; 
+            padding-bottom: 20px;
+        }
+
+        /* FIXED: Added !important to ensure text is white */
+        .header { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white !important; padding: 30px; text-align: center; }
+        .header h1 { font-size: 2em; margin-bottom: 10px; color: white !important; }
+        .header p { font-size: 0.95em; opacity: 0.9; color: white !important; }
+        
         .content { padding: 30px; }
         .section-title { background: #667eea; color: white; padding: 12px 15px; margin-top: 25px; margin-bottom: 15px; border-radius: 4px; font-weight: 600; font-size: 1.05em; }
         table { width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 0.95em; }
@@ -37,21 +55,30 @@
         .summary-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 6px; text-align: center; }
         .summary-card h3 { font-size: 0.9em; opacity: 0.9; margin-bottom: 10px; }
         .summary-card .value { font-size: 1.8em; font-weight: 700; }
-        footer { background: #f8f9fa; padding: 20px; text-align: center; font-size: 0.85em; color: #666; border-top: 1px solid #ddd; }
+        
+        /* Return Link Style */
+        .return-link-wrapper { max-width: 1200px; margin: 20px auto 10px auto; padding-left: 5px; }
+        .return-link-wrapper a { text-decoration: none; color: #1e3c72; font-weight: 500; display: flex; align-items: center; gap: 5px; }
+        .return-link-wrapper a:hover { text-decoration: underline; }
     </style>
-    <!-- Your CSS links -->
-    <link rel="stylesheet" href="../../css/protect.css">  <!-- ⬅️ ../ for css folder -->
-
 </head>
 <body>
-    <div class="container">
+
+    <div id="header-placeholder"></div>
+
+    <div class="return-link-wrapper">
+        <a href="https://midc.adamconsult.com/dc-template/index.html">
+           &#8592; Return to Templates
+        </a>
+    </div>
+
+    <div class="page-wrapper">
         <div class="header">
             <h1>1 MW Data Center Build Cost Assumption</h1>
             <p>Tier 3 Infrastructure Capex Estimation (INR/CR)</p>
         </div>
 
         <div class="content">
-            <!-- SUMMARY CARDS -->
             <div class="summary-box">
                 <div class="summary-card">
                     <h3>Total Build Cost</h3>
@@ -64,30 +91,29 @@
                     <small>MN USD</small>
                 </div>
                 
-		<div class="summary-card">
+                <div class="summary-card">
                     <h3>Electrical %</h3>
                     <div class="value">~40-45%</div>
                 </div>
-			  
-		  <div class="summary-card">
+            
+                <div class="summary-card">
                     <h3>Civil %</h3>
                     <div class="value">~15-20%</div>
                   </div>
 
-		  <div class="summary-card">
+                <div class="summary-card">
                     <h3>MEP %</h3>
                     <div class="value">~15-25%</div>
                    </div>
-		
-                  <div class="summary-card">
+        
+                 <div class="summary-card">
                     <h3>IBM and Others %</h3>
                     <div class="value">~10-20%</div>
                     <small>DCIM and Others</small>
                 </div>
-		
+        
             </div>
 
-            <!-- SECTION 1: Component Share -->
             <div class="section-title">% Share of Components – Non IT</div>
             <table>
                 <thead>
@@ -101,7 +127,6 @@
                 </tbody>
             </table>
 
-            <!-- SECTION 2: Capex Breakdown -->
             <div class="section-title">Capex for N+N (Tier 3) – Per MW IT Load</div>
             <table>
                 <thead>
@@ -116,7 +141,6 @@
                 </tbody>
             </table>
 
-            <!-- SECTION 3: Unit Cost Breakdown -->
             <div class="section-title">Case Study: Unit Costs of Major Components (1 MW DC Build – Tier 3)</div>
             <table>
                 <thead>
@@ -131,7 +155,6 @@
                 </tbody>
             </table>
 
-            <!-- CALCULATOR -->
             <div class="calc-section">
                 <h3 style="margin-bottom: 15px;">💰 Capex Calculator - Scale to Any MW</h3>
                 <div class="calc-input">
@@ -150,7 +173,6 @@
                 </div>
             </div>
 
-            <!-- NOTES -->
             <div class="note">
                 <strong>📌 Important Assumptions:</strong>
                 <ul style="margin-top: 10px; margin-left: 20px;">
@@ -177,11 +199,6 @@
                 </ul>
             </div>
         </div>
-
-        <footer>
-            <p>&copy; 2026 ADAM Consult - Data Center Infrastructure Cost Estimation</p>
-            <p style="margin-top: 10px; opacity: 0.8;">Disclaimer: Costs are indicative and may vary based on site conditions, vendor procurement, and market conditions.</p>
-        </footer>
     </div>
 
     <script>
@@ -314,38 +331,32 @@
         });
     </script>
 
- <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
-    <!-- Load footer & protection script -->
     <script>
-    fetch("../../footer.html")
-        .
-        .then(res => res.text())
-        .then(html
- => {
-            document.getElementById("footer-placeholder").innerHTML = html;
-            const protect = document.createElement("
-("script");
-            protect.src = "../../js/imgTextProtect.js";
-            document.body.appendChild(protect);
-        })
-        .catch(err => {
-            console.error("Footer load failed:", err);
-            // Fallback footer
-            document.getElementById("footer-placeholder").innerHTML
- = `
-                <footer style="background:#343a40;color:white;padding:20px;text-align:center;font-family:Roboto,sans-serif;">
-                    <div style="max-width:1200px;margin:0 auto;">
-                        <p>&copy; 2026 ADAM Consult - Data Center Infrastructure</p>
-                        <p style="opacity:0.8;margin-top:5px;font-size:0.85em;">MIDC | Mumbai | Maharashtra | India</p>
-                    </div>
-                </footer>
-            `;
-        });
+        async function loadComponents() {
+            try {
+                // Load Header
+                const headerReq = await fetch('../../header.html'); 
+                const headerText = await headerReq.text();
+                document.getElementById('header-placeholder').innerHTML = headerText;
+
+                // Load Footer
+                const footerReq = await fetch('../../footer.html');
+                const footerText = await footerReq.text();
+                document.getElementById('footer-placeholder').innerHTML = footerText;
+
+                // Load Protection Script
+                const protectScript = document.createElement("script"); 
+                protectScript.src = "../../js/imgTextProtect.js"; 
+                document.body.appendChild(protectScript);
+
+            } catch (e) {
+                console.error("Error loading header/footer:", e);
+            }
+        }
+        loadComponents();
     </script>
-
-
 
 </body>
 </html>

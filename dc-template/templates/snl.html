@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADAM Consult - Infrastructure Builder</title>
+    
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../css/responsive.css" />
+    <link rel="stylesheet" href="../../css/snl.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+
+    <style>
+        /* This forces the content to be centered */
+        .content-card {
+            max-width: 1200px;
+            margin: 0 auto; /* Centers the box horizontally */
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Style for the Return Link */
+        .return-link-wrapper {
+            max-width: 1200px;
+            margin: 0 auto 20px auto; /* Centers the link above the card */
+            padding-left: 10px;
+        }
+        .return-link {
+            text-decoration: none;
+            color: #1e3c72;
+            font-weight: bold;
+            font-size: 1.1em;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .return-link:hover {
+            color: #2a5298;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body class="watermarked">
+
+    <div id="header-placeholder"></div>
+
+    <section class="section-padding" style="min-height: 80vh; padding: 40px 20px;">
+        
+        <div class="return-link-wrapper">
+            <a href="../index.html" class="return-link">
+                <i class="fas fa-arrow-left"></i> Return to Template Home
+            </a>
+        </div>
+
+        <div class="content-card">
+            <div class="section-header">
+                <h2>Infrastructure Configurator</h2>
+                <p>Build your BOM instantly with <strong>Reference Ex-Mumbai Pricing</strong>.</p>
+            </div>
+
+            <div id="snl-wrapper">
+                <div id="tool-status-bar"><span id="conn-status">Connecting...</span></div>
+                <div class="snl-container">
+                    <div class="snl-sidebar">
+                        <div class="snl-sidebar-header">Category</div>
+                        <button class="snl-nav-btn active" onclick="switchTab('compute')">Compute & Servers</button>
+                        <button class="snl-nav-btn" onclick="switchTab('storage')">Storage (SAN/NAS)</button>
+                        <button class="snl-nav-btn" onclick="switchTab('network')">Networking</button>
+                        <button class="snl-nav-btn" onclick="switchTab('security')">Security & Firewalls</button>
+                        <button class="snl-nav-btn" onclick="switchTab('software')">Software & OS</button>
+                        <button class="snl-nav-btn" onclick="switchTab('racks')">Infra (Racks/UPS)</button>
+                        <button class="snl-nav-btn" onclick="switchTab('endpoints')">Laptops & Desktops</button>
+                        <button class="snl-nav-btn" onclick="switchTab('cabling')">Structured Cabling</button>
+                        <button class="snl-nav-btn" onclick="switchTab('physical_sec')">CCTV & Access</button>
+                        <button class="snl-nav-btn" onclick="switchTab('av_room')">Meeting Room AV</button>
+                    </div>
+                    <div class="snl-content">
+                        <h3 id="section-title">Compute Infrastructure</h3>
+                        <div class="snl-form-group"><label>Select Model</label><select id="sel-model"><option value="0">Loading...</option></select></div>
+                        <div class="snl-form-group"><label>Add-ons</label><select id="sel-addon"><option value="0">-- None --</option></select></div>
+                        <div class="snl-form-group"><label>Qty</label><input type="number" id="sel-qty" value="1" min="1" max="500"></div>
+                        <button class="snl-add-btn" onclick="addToCart()">Add to BOM</button>
+                    </div>
+                    <div class="snl-boq">
+                        <div class="snl-boq-header">Bill of Materials</div>
+                        <div class="snl-boq-list" id="cart-list"><div class="empty-cart-msg">No items added yet.</div></div>
+                        <div class="snl-boq-footer">
+                            <div class="snl-row"><span>Total:</span><span id="subtotal-display">₹0</span></div>
+                            <div class="snl-row" style="color:#666;font-size:0.8rem;"><span>GST (18%):</span><span id="tax-display">₹0</span></div>
+                            <div class="snl-row snl-total"><span>Grand Total:</span><span id="grand-total">₹0</span></div>
+                            <div class="action-buttons" style="display:flex;gap:5px;margin-top:10px;">
+                                <button class="reset-btn" onclick="resetCart()">Reset</button>
+                                <button class="snl-quote-btn" onclick="openModal()">Request Quote</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="snl-terms">
+                <h3>Terms & Conditions</h3>
+                <ul>
+                    <li><strong>Price Protection:</strong> Prices are Reference Pricing (Ex-Mumbai) and subject to change without prior notice. Quotes are valid for 7 days.</li>
+                    <li><strong>Installation:</strong> Installation and Commissioning are <u>not inclusive</u>. These are charged extra based on scope.</li>
+                    <li><strong>Warranty & AMC:</strong> Warranty and Annual Maintenance Contracts (AMC) are provided directly by the OEM as per their standard policy.</li>
+                    <li><strong>Supplier Clauses:</strong> Please check with your specific supplier for delivery timelines and payment terms.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div id="quoteModal" class="modal-overlay">
+        <div class="modal-box">
+            <h3>Finalize Quote</h3>
+            <input type="text" id="cust-name" placeholder="Full Name">
+            <input type="email" id="cust-email" placeholder="Email Address">
+            <input type="text" id="cust-phone" placeholder="Phone Number">
+            <div class="modal-buttons">
+                <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+                <button class="submit-btn" id="btn-submit" onclick="submitToSheet()">Submit Inquiry</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>    
+
+    <script>
+        async function loadComponents() {
+            try {
+                // Load Header
+                const headerReq = await fetch('../../header.html');
+                const headerText = await headerReq.text();
+                document.getElementById('header-placeholder').innerHTML = headerText;
+                
+                // Load Footer
+                const footerReq = await fetch('../../footer.html');
+                const footerText = await footerReq.text();
+                document.getElementById('footer-placeholder').innerHTML = footerText;
+
+                // Load Protection Script
+                const protectScript = document.createElement("script"); 
+                protectScript.src = "../../js/imgTextProtect.js"; 
+                document.body.appendChild(protectScript);
+
+            } catch (e) {
+                console.error("Error loading header/footer:", e);
+            }
+        }
+        
+        loadComponents();
+
+        // Main Logic Script
+        const mainScript = document.createElement("script");
+        mainScript.src = "../../js/main.js";
+        document.body.appendChild(mainScript);
+    </script>
+    
+    <script src="../../js/snl.js"></script>
+</body>
+</html>
