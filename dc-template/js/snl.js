@@ -2,8 +2,7 @@
 // 1. PRICE SHEET LINK (Must be the CSV link)
 //    I have restored your working link here. DO NOT CHANGE THIS.
 // =========================================================
-const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vROG-bllbo-wcPvaUGLAIwvqpzPJxCkdHxz4pSO_t6odUeBepAb88drKRTeLxGIxAoah_PIjYjsbIbt/pub?gid=0&single=true&output=csv';
-
+const sheetURL ="https://docs.google.com/spreadsheets/d/e/2PACX-1vROG-bllbo-wcPvaUGLAIwvqpzPJxCkdHxz4pSO_t6odUeBepAb88drKRTeLxGIxAoah_PIjYjsbIbt/pub?gid=0&single=true&output=csv";
 // =========================================================
 // 2. SUBMISSION SCRIPT URL (From your Deployment)
 //    Paste your NEW Web App URL here (ending in /exec)
