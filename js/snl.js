@@ -1,15 +1,15 @@
 // =========================================================
-// 1. PRICE SHEET LINK (Must be the CSV link from Step 1)
+// 1. PRICE SHEET LINK (Direct CSV)
 // =========================================================
-const sheetURL = 'PASTE_YOUR_NEW_CSV_LINK_HERE'; 
+const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vROG-bllbo-wcPvaUGLAIwvqpzPJxCkdHxz4pSO_t6odUeBepAb88drKRTeLxGIxAoah_PIjYjsbIbt/pub?gid=0&single=true&output=csv";
 
 // =========================================================
-// 2. SUBMISSION SCRIPT URL (From your Deployment)
-//    This sends the email. Keep your /exec link here.
+// 2. SUBMISSION LINK (Web App URL)
+//    Ensure this ends in /exec
 // =========================================================
-const scriptURL = 'https://script.google.com/macros/s/AKfycbzJQU77yhLjO4f1DVLYTIYHuXsyArdsj15envQlyBZtvEl58oUIFT_EekjqdN093EO5/exec'; 
+const scriptURL = "https://script.google.com/macros/s/AKfycbzJQU77yhLjO4f1DVLYTIYHuXsyArdsj15envQlyBZtvEl58oUIFT_EekjqdN093EO5/exec"; 
 
-// STATE MANAGEMENT
+// STATE
 let db = [], cart = [], currentCategory = 'compute';
 const categoryTitles = {
     'compute': 'Compute & Servers', 'storage': 'SAN / NAS Storage', 'network': 'Switches & Routers',
@@ -19,33 +19,29 @@ const categoryTitles = {
 
 // INITIALIZATION
 window.onload = function() {
-    updateStatus('Connecting to Reference Prices...', '#f8f9fa');
-
-    // Safety Check: Ensure the link is actually a CSV
-    if (!sheetURL.includes("output=csv")) { 
-        updateStatus('Error: Invalid CSV Link. Check snl.js', '#dc3545'); 
-        return; 
-    }
+    updateStatus('Connecting to Database...', '#f8f9fa');
 
     Papa.parse(sheetURL, {
-        download: true, header: true, skipEmptyLines: true,
+        download: true,
+        header: true,
+        skipEmptyLines: true,
         complete: function(results) {
+            console.log("Data loaded:", results.data); // Debugging
             if(results.data && results.data.length > 0) {
                 db = results.data;
                 updateStatus('● Reference Pricing Active', '#28a745'); 
                 renderForm('compute'); 
             } else { 
-                updateStatus('Database Empty', '#ffc107'); 
+                updateStatus('Database Empty or Load Failed', '#ffc107'); 
             }
         },
         error: function(err) { 
-            console.error(err);
-            updateStatus('Connection Failed. Check Internet', '#dc3545'); 
+            console.error("PapaParse Error:", err);
+            updateStatus('Connection Failed. Check Console.', '#dc3545'); 
         }
     });
 };
 
-// UI UPDATES
 function updateStatus(msg, color) {
     const s = document.getElementById('conn-status');
     const b = document.getElementById('tool-status-bar');
@@ -68,16 +64,14 @@ function renderForm(cat) {
     const mSel = document.getElementById('sel-model');
     const aSel = document.getElementById('sel-addon');
     
-    // Reset Dropdowns
     mSel.innerHTML = '<option value="0" data-price="0">-- Select Model --</option>';
     aSel.innerHTML = '<option value="0" data-price="0">-- None --</option>';
     document.getElementById('sel-qty').value = 1;
 
-    // Filter DB
-    const models = db.filter(i => i.Category && i.Category.trim().toLowerCase() === cat && i.Type.trim() === 'model');
-    const addons = db.filter(i => i.Category && i.Category.trim().toLowerCase() === cat && i.Type.trim() === 'addon');
+    // Filter DB - Case Insensitive Check
+    const models = db.filter(i => i.Category && i.Category.trim().toLowerCase() === cat && i.Type.trim().toLowerCase() === 'model');
+    const addons = db.filter(i => i.Category && i.Category.trim().toLowerCase() === cat && i.Type.trim().toLowerCase() === 'addon');
 
-    // Populate
     models.forEach(m => { 
         if(m.Name) mSel.innerHTML += `<option value="${m.Name}" data-price="${m.Price}">${m.Name} - ₹${parseInt(m.Price).toLocaleString('en-IN')}</option>`; 
     });
@@ -86,7 +80,6 @@ function renderForm(cat) {
     });
 }
 
-// CART FUNCTIONS
 function addToCart() {
     const mSel = document.getElementById('sel-model');
     const aSel = document.getElementById('sel-addon');
@@ -107,7 +100,6 @@ function addToCart() {
     });
     
     renderCart();
-    // Reset Form
     mSel.value = '0'; aSel.value = '0';
 }
 
@@ -147,15 +139,9 @@ function updateTotals(t) {
     document.getElementById('grand-total').innerText = '₹' + (t*1.18).toLocaleString('en-IN');
 }
 
-// SUBMISSION LOGIC
-function openModal() { 
-    if(cart.length === 0) return alert("Cart is empty"); 
-    document.getElementById('quoteModal').style.display = 'flex'; 
-}
-
-function closeModal() { 
-    document.getElementById('quoteModal').style.display = 'none'; 
-}
+// SUBMISSION
+function openModal() { if(cart.length===0) return alert("Cart is empty"); document.getElementById('quoteModal').style.display = 'flex'; }
+function closeModal() { document.getElementById('quoteModal').style.display = 'none'; }
 
 function submitToSheet() {
     const n = document.getElementById('cust-name').value;
