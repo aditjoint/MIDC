@@ -1,180 +1,64 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+
+<!-- Footer -->
 <style>
-  /* Footer Specific Styles */
-  footer {
-    background-color: #212529;
-    color: #fff;
-    padding-top: 40px;
-    font-family: 'Roboto', sans-serif;
-  }
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
-  .footer-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
+.footer-left {
+  flex: 1 1 300px; /* logo + description */
+}
 
-  .footer-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
+.footer-center {
+  flex: 2 1 500px; /* links columns */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
-  .footer-left {
-    flex: 1 1 300px;
-  }
+.footer-qr {
+  flex: 0 0 120px; /* QR code size */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
 
-  .footer-center {
-    flex: 2 1 500px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
+.footer-qr img {
+  width: 100px;
+  height: 100px;
+}
 
-  /* Brand & Logo */
-  .footer-brand .logo a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    margin-bottom: 15px;
-  }
-  
-  .footer-brand .logo img {
-    height: 45px;
-    width: auto;
-  }
-
-  .footer-brand p {
-    color: #ccc;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-
-  .social-links a {
-    color: #fff;
-    font-size: 1.2rem;
-    margin-right: 15px;
-    transition: color 0.3s ease;
-  }
-  .social-links a:hover {
-    color: #ffc107;
-  }
-
-  /* Link Groups */
-  .link-group h3 {
-    color: #fff;
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #444;
-    padding-bottom: 5px;
-    display: inline-block;
-  }
-
-  .link-group ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .link-group li {
-    margin-bottom: 10px;
-  }
-
-  .link-group a {
-    color: #ccc;
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: color 0.2s ease;
-  }
-
-  .link-group a:hover {
-    color: #fff;
-    padding-left: 5px;
-  }
-
-  /* Contact Grid */
-  .footer-contact-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .contact-item {
-    display: flex;
-    align-items: center;
-    color: #ccc;
-    text-decoration: none;
-    font-size: 0.95rem;
-  }
-
-  .contact-item i {
-    width: 25px;
-    color: #ffc107;
-  }
-
-  .contact-item:hover {
-    color: #fff;
-  }
-
-  /* QR Code */
-  .footer-qr {
-    flex: 0 0 120px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    background: #fff;
-    padding: 10px;
-    border-radius: 8px;
-  }
-
-  .footer-qr img {
-    width: 100px;
-    height: 100px;
-    display: block;
-  }
-
-  /* Bottom Bar */
-  .footer-bottom {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px 0;
-    font-size: 0.85rem;
-    color: #777;
-    border-top: 1px solid #333;
-    background-color: #1a1e21;
-  }
-
-  /* Responsive Adjustments */
-  @media (max-width: 900px) {
-    .footer-flex {
-      flex-direction: column;
-    }
-    .footer-left, .footer-center {
-      width: 100%;
-      flex: none;
-    }
-    .footer-qr {
-      margin: 0 auto;
-    }
-  }
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px 0;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+}
 </style>
 
-<footer>
-  <div class="footer-wrapper footer-flex">
-    
+  <footer>
+  <div class="container footer-flex">
     <div class="footer-left">
-      <div class="footer-brand">       
-        <div class="logo">
-          <a href="/index.html"> <img src="/images/icon.png" alt="ADAM Consult Logo"> <span style="color: white; font-weight: bold; font-size: 1.2rem; margin-left: 10px;">ADAM Consult</span>
-          </a>
-        </div>
-        
-        <p>ADAM Consult is a strategic gateway and modular collaboration hub that empowers cross-sector innovation. By uniting partners, consultants, and customers in a unified ecosystem, it enables high-impact partnerships.</p>
-        
-        <div class="social-links">
+      <div class="footer-brand">      
+    <!-- Logo -->
+      <div class="logo">
+        <a href="../index.html">
+            <span class="logo-text"> </span>
+            <img src="../images/icon.png" alt="ADAM Consult Logo">
+        </a>
+      </div>
+
+      <p>We serve as a strategic digital backbone and modular collaboration hub for modern enterprises for unified ERP and Digital IT capabilities to streamline processes, improve visibility, and enable smarter decisions.</p>
+          
+         <div class="social-links">
           <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
       </div>
@@ -184,18 +68,33 @@
       <div class="link-group">
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../about.html">About Us</a></li>
+          <li><a href="../../contact.html">Contact</a></li>
+          <li><a href="../../advisors.html" style="display: none">Executive Team</a></li>
+          <li><a href="../../investment.html" style="display: none">Start-up Advisory</a></li>
+          <li><a href="../../services/composite-infrastructure.html" style="display: none">Enterprise Advisory</a></li>
+          <li><a href="../../resources" style="display: none">Resources</a></li>
+          <li><a href="../../currentaffairs/blog.html" style="display: none">Reader's Choice</a></li>
+          <li><a href="../../currentaffairs/252420rc.html" style="display: none">External Opportunities</a></li>
+         </ul>
+        </div>
+
+        <div class="link-group" style="display: none">
+        <h3>Check Offerings</h3>
+          <li><a href="https://midc.adamconsult.com" target="_blank" rel="noopener">Data Center and Infra Build</a></li>
+          <li><a href="https://even.adamconsult.com" target="_blank" rel="noopener">Energy and Sustainability</a></li>
+          <li><a href="https://adamconsult.com" target="_blank" rel="noopener">ADAM Consult</a></li>
         </ul>
       </div>
 
+  
       <div class="link-group">
         <h3>Actions</h3>
         <ul>
           <li><a href="https://midc.adamconsult.com" target="_blank">Data Center Infra</a></li>
-          <li><a href="/templates/snl1.html">HDC Checklist</a></li>
-          <li><a href="/snl.html">IT-HW-Estimator</a></li>    
+          <li><a href="../../dc-template/templates/snl1.html">HDC Checklist</a></li>
+          <li><a href="../../dc-template/templates/snl.html">IT-HW-Estimator</a></li>    
           <li><a href="https://erpbuild.adamconsult.com" target="_blank">Custom ERP</a></li>
         </ul>
       </div>
@@ -207,6 +106,17 @@
         <p><a href="/privacy&cookies.html">Privacy & Cookie Policy</a></p>
       </div>
        
+
+      
+      <div class="link-group">
+        <h3>Legal</h3>
+        <p><a href="../termsofuse.html">Terms of Use</a></p>
+        <p><a href="../dataprotection.html">Data Protection Policy</a></p>
+        <p><a href="../whistleblowing.html" style="display: none">Whistleblowing Policy</a></p>
+        <p><a href="../privacy&cookies.html">Privacy & Cookie Policy</a></p>
+        <p><a href="../partnership-agreement.html" style="display: none">Partnership Agreement</a></p>
+      </div>
+      
       <div class="link-group">
         <h3>Our Location</h3>
         <div class="footer-contact-grid">
@@ -216,19 +126,52 @@
           <a href="tel:+912235667733" class="contact-item">
             <i class="fas fa-phone-alt"></i><span>+91-22-3566-7733</span>
           </a>
+   
           <a href="mailto:sales@adamconsult.com" class="contact-item">
-            <i class="fas fa-envelope"></i><span>sales@adamconsult.com</span>
+            <i class="fas fa-envelope"></i>
+            <span>
+              <p>Email: sales [at] adamconsult [dot] com</p>
+            </span>
           </a>
         </div>
       </div>
     </div>
     
+    <!-- QR Code on the right side -->
     <div class="footer-qr">
-      <img src="/images/adam-qr.png" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=ADAMConsult'" alt="QR Code" />
+      <img src="../images/adam-qr.png" alt="QR Code" />
     </div>
   </div>
 
   <div class="footer-bottom">
-    <p>© 2025 ADAM Consult, ADIT Joint LLP. All rights reserved.</p>
+    <p>&copy; 2025 ADAM Consult, ADIT Joint LLP. All rights reserved.</p>
   </div>
 </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      
