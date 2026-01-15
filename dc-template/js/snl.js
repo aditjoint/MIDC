@@ -1,11 +1,11 @@
 // =========================================================
-// 1. PRICE SHEET LINK (Must be the CSV link)
-//    I have restored your working link here. DO NOT CHANGE THIS.
+// 1. PRICE SHEET LINK (Must be the CSV link from Step 1)
 // =========================================================
-const sheetURL ="https://docs.google.com/spreadsheets/d/e/2PACX-1vROG-bllbo-wcPvaUGLAIwvqpzPJxCkdHxz4pSO_t6odUeBepAb88drKRTeLxGIxAoah_PIjYjsbIbt/pub?gid=0&single=true&output=csv";
+const sheetURL = 'PASTE_YOUR_NEW_CSV_LINK_HERE'; 
+
 // =========================================================
 // 2. SUBMISSION SCRIPT URL (From your Deployment)
-//    Paste your NEW Web App URL here (ending in /exec)
+//    This sends the email. Keep your /exec link here.
 // =========================================================
 const scriptURL = 'https://script.google.com/macros/s/AKfycbzJQU77yhLjO4f1DVLYTIYHuXsyArdsj15envQlyBZtvEl58oUIFT_EekjqdN093EO5/exec'; 
 
