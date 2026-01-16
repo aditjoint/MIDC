@@ -1,0 +1,77 @@
+/* Advisor Page Styles */
+.advisors-section {
+    padding: var(--spacing-4xl) 0;
+}
+
+.advisors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.advisor-card {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    padding: var(--spacing-xl);
+}
+
+.advisor-content h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.5rem;
+}
+
+.advisor-content h4 {
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.2rem;
+}
+
+.advisor-role, .advisor-focus {
+    color: var(--text-medium);
+    margin-bottom: var(--spacing-sm);
+}
+
+.advisor-bio {
+    margin: var(--spacing-md) 0;
+    line-height: 1.6;
+}
+
+.advisor-expertise {
+    color: var(--text-medium);
+    font-style: italic;
+}
+
+.advisor-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Enrollment Form Styles */
+.enrollment-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl);
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+}
+
+.form-group textarea {
+    min-height: 150px;
+}

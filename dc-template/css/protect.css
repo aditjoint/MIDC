@@ -1,0 +1,95 @@
+/* ===== protect.css — Global Content & Image Protection ===== */
+/* ✅ Base layout and scroll control */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  touch-action: pan-x pan-y; /* allows pinch zoom and scrolling */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ✅ Allow input & form interaction */
+input, textarea, select, label, a, button {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+  pointer-events: auto;
+}
+
+/* 🚫 Block interaction with images, but allow JS events */
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+  -webkit-touch-callout: none !important;
+  user-select: none !important;
+}
+
+/* 🚫 Disable selection on static content */
+/* Exclude h1, h2, h3 from this disable rule */
+h4, h5, h6,
+p, span, strong,
+div:not(.allow-select) {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+/* Make h1, h2, h3 explicitly selectable */
+h1, h2, h3 {
+  -webkit-user-select: text !important;  /* Allow text selection */
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+  -webkit-user-drag: none !important;    /* Disable dragging */
+  user-drag: none !important;
+  -webkit-touch-callout: none !important; /* Disable long-tap callout on mobiles */
+}
+
+/* 🖨️ Fully block printing */
+@media print {
+  body {
+    display: none !important;
+  }
+}
+
+/* ✅ Optional: Protected image utility class */
+img.protected-img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+}
+
+
+/* ✅ Optional overlay wrapper to block save-as and drag */
+/* overlay blocks all mouse events */
+.img-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.img-wrapper img {
+  pointer-events: none; /* block clicks on the image itself */
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 9999;
+  cursor: default;
+}
+/* Make all .png images non-clickable without affecting other styles */
+img[src$=".png"] {
+  pointer-events: none !important;
+}
