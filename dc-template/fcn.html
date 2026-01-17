@@ -1,1 +1,78 @@
 
+/* --- Main Content Layout --- */
+.main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Card Component Structure --- */
+.dc-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 2rem; /* Space between sections */
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.dc-card:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.dc-card-header {
+    background-color: #f8f9fa;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.dc-card-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.dc-card-body {
+    padding: 20px;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* --- Image Handling --- */
+.diagram-container {
+    text-align: center;
+    padding: 10px;
+    background: #fff;
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #eee;
+    padding: 5px;
+}
+
+
+<div class="dc-card" id="section-topology">
+    <div class="dc-card-header">
+        <h2>1. Data Center Network Cabling Topology (Block Diagram)</h2>
+    </div>
+    <div class="dc-card-body">
+        <p>This diagram illustrates the hierarchical structure of the data center cabling system, highlighting the relationships between the Support Center, Computer Room, and various distribution areas (MDA, HDA, EDA, ZDA).</p>
+        
+        <div class="diagram-container">
+            <img src="path/to/your/topology-diagram.png" alt="Data Center Cabling Block Diagram" class="responsive-img">
+        </div>
+
+        <ul style="margin-top: 15px; font-size: 0.9em; color: #666;">
+            <li><strong>MDA:</strong> Main Distribution Area</li>
+            <li><strong>HDA:</strong> Horizontal Distribution Area</li>
+            <li><strong>EDA:</strong> Equipment Distribution Area</li>
+            <li><strong>ZDA:</strong> Zone Distribution Area</li>
+            <li><strong>TR:</strong> Telecommunications Room</li>
+        </ul>
+    </div>
+</div>
